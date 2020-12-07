@@ -41,24 +41,21 @@ router.delete("/", async (req, res) => {
     });
 });
 
-router.post("/signin", async (req, res) => {
+router.post("/", async (req, res) => {
     const { email, password } = req.body;
     if (await User.checkPassword(email, password)) {
-        console.log(1)
-      User.findOne({ emailAddress: email }, (err, users) => {
-        console.log(2)
+      User.findOne({ emailAddress: email }, (err, user) => {
         if (err) {
           console.log(err);
           res.status(500).json({ status: "Not OK", err });
-        } else if (!users) {
+        } else if (!user) {
           res.status(404).json({ status: "Not OK", err: "User doesn't exist." });
         } else {
-          res.status(200).json({ status: "OK", emailAddress: users.emailAddress, username: users.username });
+          res.status(200).json({ status: "OK", emailAddress: user.emailAddress, username: user.username });
         }
       });
       return;
     }
-    console.log(3)
     res.status(401).json({ status: "Not OK", err: "Unauthorised." });
 });
 
