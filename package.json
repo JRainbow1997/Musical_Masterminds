@@ -1,0 +1,36 @@
+{
+  "name": "musical_masterminds",
+  "version": "1.0.0",
+  "description": "Create a Quiz application with a login, sign up &amp; timeout feature",
+  "main": "index.js",
+  "scripts": {
+    "backend": "nodemon index.js",
+    "frontend": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "bootstrap": "npm install -d && cd frontend && npm install -d",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JRainbow1997/Musical_Masterminds.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JRainbow1997/Musical_Masterminds/issues"
+  },
+  "homepage": "https://github.com/JRainbow1997/Musical_Masterminds#readme",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.5.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mongoose": "^5.11.4",
+    "nodemon": "^2.0.6"
+  }
+}
