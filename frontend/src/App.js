@@ -1,4 +1,5 @@
-import { BrowserRouter, Redirect, Route } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import About from "./components/about/About";
 import PageNotFound from "./components/error/PageNotFound";
 import Faq from "./components/faq/Faq";

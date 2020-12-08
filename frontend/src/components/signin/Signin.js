@@ -23,7 +23,7 @@ function Signin() {
                 sessionStorage.setItem('signedIn', 'true');
                 sessionStorage.setItem('email', res.data.emailAddress);
                 sessionStorage.setItem('username', res.data.username);
-                history.push('/home');
+                history.push('/main');
             } else {
                 history.push('/signup');
             }

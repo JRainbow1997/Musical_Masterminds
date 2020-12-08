@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "./images/logo.png";
-import "./navBar.css";
+import "./Navbar.css";
 
 function Navbar(props){
     return (
@@ -17,7 +17,7 @@ function Navbar(props){
                     <li><Link to="/profile">Account Settings</Link></li>
                     <li><Link to="/about">About</Link></li>
                     <li><Link to="/faq">FAQs</Link></li>
-                    <li><Link to="/logout">Logout</Link></li>
+                    <li><Link to="/signout">Signout</Link></li>
                 </ul>
             </div>
         </nav>

@@ -22,7 +22,7 @@ const Signup = () => {
             if (res.data.status === 'OK') {
                 sessionStorage.setItem('signedIn', 'true');
                 sessionStorage.setItem('email', res.data.emailAddress);
-                history.push('/home');
+                history.push('/main');
             } else {
                 history.push('/signup');
             }
