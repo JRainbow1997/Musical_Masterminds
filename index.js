@@ -25,10 +25,12 @@ app.use(bodyParser.json());
 const indexRouter = require("./routes/indexRouter");
 const usersRouter = require("./routes/usersRouter");
 const leaderboardRouter = require("./routes/leaderboardRouter");
+const quizRouter = require("./routes/quizRouter");
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/leaderboard", leaderboardRouter);
+app.use("/quiz", quizRouter);
 
 app.listen(5000, () => {
     console.log("App is online.");
