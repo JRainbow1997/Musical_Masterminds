@@ -17,6 +17,8 @@ connection.once("open", function () {
     console.log("MongoDB database connection established successfully!");
 })
 
+app.use(cors());
+app.use(session({resave: true, saveUninitialized: true, secret: 'asdf'}));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
