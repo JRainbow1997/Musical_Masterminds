@@ -1,6 +1,6 @@
 import { BrowserRouter, Redirect, Route } from "react-router-dom";
 import About from "./components/about/About";
-import Error from "./components/error/Error";
+import PageNotFound from "./components/error/PageNotFound";
 import Faq from "./components/faq/Faq";
 import Leaderboard from "./components/leaderboard/Leaderboard";
 import Main from "./components/main/Main";
@@ -41,7 +41,7 @@ function App() {
               <Route exact path="/Quiz" component={Quiz} /> 
               <Route exact path="/" component={Signin} />        
               <Route exact path="/Signup" component={Signup} />
-              <Route path = "/404" component={ Error } />
+              <Route path = "/404" component={ PageNotFound } />
               <Redirect to="404" />
             </Switch>
           </body>              
