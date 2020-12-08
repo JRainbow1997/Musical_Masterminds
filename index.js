@@ -1,18 +1,37 @@
 const express = require("express");
-const bodyParser = require('body-parser');
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const session = require("express-session");
 const app = express();
+const mongoose = require("mongoose");
 
-const indexRouter = require('./routes/indexRouter');
-const userRouter = require('./routes/userRouter');
-const leaderboardRouter = require('./routes/leaderboardRouter');
+require("dotenv").config();
 
-app.use("/", indexRouter);
-app.use("/user", userRouter);
-app.use("/leaderboard", leaderboardRouter);
+mongoose.connect(process.env.mongoConnectionString,{
+    useNewUrlParser:true,
+    useUnifiedTopology: true
+})
+const connection = mongoose.connection;
 
+connection.once("open", function () {
+    console.log("MongoDB database connection established successfully!");
+})
+
+app.use(cors());
+app.use(session({resave: true, saveUninitialized: true, secret: 'asdf'}));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
+const indexRouter = require("./routes/indexRouter");
+const usersRouter = require("./routes/usersRouter");
+const leaderboardRouter = require("./routes/leaderboardRouter");
+const quizRouter = require("./routes/quizRouter");
+
+app.use("/", indexRouter);
+app.use("/users", usersRouter);
+app.use("/leaderboard", leaderboardRouter);
+app.use("/quiz", quizRouter);
+
 app.listen(5000, () => {
-    console.log('App is online.');
+    console.log("App is online.");
 });
