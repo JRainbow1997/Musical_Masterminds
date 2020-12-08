@@ -40,7 +40,7 @@ router.delete("/", async (req, res) => {
         }
     });
 });
-//This route handles the signup
+//This route handles the signin
 router.post("/", async (req, res) => {
     const { email, password } = req.body;
     if (await User.checkPassword(email, password)) {
