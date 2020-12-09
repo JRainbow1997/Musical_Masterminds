@@ -4,13 +4,12 @@ const LeaderBoard = require("../models/schemas/leaderboard");
 
 const getQuiz = require('../lib/getQuiz');
 
-router.get('/', async(req, res) => {
-    // console.log(req.query)
+router.get('/', async (req, res) => {
     res.status(200).json(await getQuiz(req.query.questions, req.query.category, req.query.difficulty));
 });
 
-router.post('/', async(req, res) => {
-    const context = {score : req.body.score, userId : req.body.userId, difficulty : req.body.difficulty, date : new Date()}
+router.post('/', async (req, res) => {
+    const context = { score: req.body.score, userId: req.body.userId, difficulty: req.body.difficulty, date: new Date() }
     new LeaderBoard(context).save((err, result) => {
         if (err) {
             console.log(err);
