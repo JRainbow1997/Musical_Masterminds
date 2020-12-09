@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {useHistory} from "react-router-dom"
 import axios from 'axios';
+import "./Signin.css"
 
 
 function Signin() {
@@ -33,16 +34,16 @@ function Signin() {
 
     return (
         <div className="signin">
-            <h1 className="signin-title">Sign in</h1>
-            <form onSubmit={onSubmit} className="signInForm">
+            <form onSubmit={onSubmit} className="signin-form">
+                <h1 className="signin-title">Sign in</h1>
 
                 <label htmlFor="email">Enter your email address</label>
                 <input onChange = {onChange} value = {email} id="email" type="email" name="email" placeholder="Username/email"></input>
 
-                <label htmlFor="password">Enter your Password</label>
+                <label htmlFor="password">Enter your password</label>
                 <input onChange = {onChange} value = {password} id="password" type="password" name="password" placeholder="Password"></input>
 
-                <input id="submit-signin" type="submit" value="sign In"></input>
+                <input id="submit-signin" className = "submit-signin" type="submit" value="Sign In"></input>
                 
                 <a href="/signup" className="signup-link">Create an Account</a>
             </form>

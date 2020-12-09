@@ -6,10 +6,10 @@ import "./Navbar.css";
 function Navbar(props){
     return (
         <nav>
-            <div className="divLogoLoggedIn">
-                <img src={logo} className="logoLoggedIn" alt="logo" />
+            <div className="div-logo">
+                <img src={logo} className="logo" alt="logo" />
             </div>
-            <div className="divLinksLoggedIn">
+            <div className="div-LinksSignedIn">
                 <ul>
                     <li><Link to="/main">Home Page</Link></li>
                     <li><Link to="/quiz">Quiz</Link></li>

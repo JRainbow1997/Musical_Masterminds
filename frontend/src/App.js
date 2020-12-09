@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import About from "./components/about/About";
 import PageNotFound from "./components/error/PageNotFound";
@@ -18,7 +18,7 @@ function App() {
     <React.Fragment>
       <BrowserRouter>
         <div className="App">
-          <header className="App-header">
+          <header className="AppHeader">
             <Switch>
               <Route path = "/About" component = {NavbarSI}/>
               <Route path = "/Faq" component = {NavbarSI}/>
@@ -32,7 +32,6 @@ function App() {
             </Switch>
           </header>
           <body className="AppBody">
-            <h1>hello</h1>
             <Switch>
               <Route exact path="/About" component={About} />        
               <Route exact path="/Faq" component={Faq} /> 
