@@ -51,7 +51,7 @@ router.post("/", async (req, res) => {
         } else if (!user) {
           res.status(404).json({ status: "Not OK", err: "User doesn't exist." });
         } else {
-          res.status(200).json({ status: "OK", emailAddress: user.emailAddress, username: user.username });
+          res.status(200).json({ status: "OK", emailAddress: user.emailAddress, username: user.username, userId : user._id });
         }
       });
       return;
