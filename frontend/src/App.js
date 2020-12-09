@@ -11,6 +11,7 @@ import Profile from "./components/profile/Profile";
 import Quiz from "./components/quiz/Quiz";
 import Signin from "./components/signin/Signin";
 import Signup from "./components/signup/Signup";
+import Signout from "./components/signout/Signout"
 import "./App.css";
 
 function App() {
@@ -20,15 +21,15 @@ function App() {
         <div className="App">
           <header className="AppHeader">
             <Switch>
-              <Route path = "/About" component = {NavbarSI}/>
-              <Route path = "/Faq" component = {NavbarSI}/>
-              <Route path = "/Leaderboard" component = {NavbarSI} />
-              <Route path = "/Main" component = {NavbarSI} />
-              <Route path = "/Profile" component = {NavbarSI} />
-              <Route path = "/Quiz" component = {NavbarSI} />
+              <Route path = "/about" component = {NavbarSI}/>
+              <Route path = "/faq" component = {NavbarSI}/>
+              <Route path = "/leaderboard" component = {NavbarSI} />
+              <Route path = "/main" component = {NavbarSI} />
+              <Route path = "/profile" component = {NavbarSI} />
+              <Route path = "/quiz" component = {NavbarSI} />
               <Route path = "/" component = {Navbar} />
-              <Route path = "/Signin" component = {Navbar} />
-              <Route path = "/Signout" component = {Navbar} />
+              <Route path = "/signin" component = {Navbar} />
+              <Route path = "/signout" component = {Navbar} />
             </Switch>
           </header>
           <body className="AppBody">
@@ -41,6 +42,7 @@ function App() {
               <Route exact path="/Quiz" component={Quiz} /> 
               <Route exact path="/" component={Signin} />        
               <Route exact path="/Signup" component={Signup} />
+              <Route path = "/signout" component = {Signout} />
               <Route path = "/404" component={ PageNotFound } />
               <Redirect to="404" />
             </Switch>

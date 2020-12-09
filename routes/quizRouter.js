@@ -10,7 +10,7 @@ router.get('/', async(req, res) => {
 });
 
 router.post('/', async(req, res) => {
-    const context = {results : req.body.results, userId : req.body.userId, difficulty : req.body.difficulty, date : new Date()}
+    const context = {score : req.body.score, userId : req.body.userId, difficulty : req.body.difficulty, date : new Date()}
     new LeaderBoard(context).save((err, result) => {
         if (err) {
             console.log(err);

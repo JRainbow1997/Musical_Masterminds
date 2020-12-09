@@ -6,7 +6,7 @@ const leaderboardSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "users"
     },
-    results: {
+    score: {
         type: Number,
         required: true
     },

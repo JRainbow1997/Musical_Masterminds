@@ -5,13 +5,21 @@ import "./Leaderboard.css";
 const Leaderboard = () => {
   const [leaderboard, setLeaderboard] = useState([]);
 
+  const parseData = (data) => {
+    const changedResults = data.map((item) => {
+      return item.results.map((res) => {
+        return { "username": item.username, "score": res.score, "difficulty": res.difficulty, "date": new Date(res.date).toDateString() };
+      });
+    });
+    return [].concat.apply([], changedResults).sort((a, b) => {return b.score - a.score}).slice(0, 9);
+  };
+
   const getResponse = () => {
     // let userId = sessionStorage.getItem("userId");
     axios
       .post("http://localhost:5000/leaderboard")
       .then((res) => {
-        setLeaderboard(res.data.results);
-        console.log(res.data.results)
+        setLeaderboard(parseData(res.data.results));
       })
       .catch((err) => {
         alert(err, "No Leader");
@@ -21,7 +29,6 @@ const Leaderboard = () => {
   useEffect(() => {
     if (leaderboard.length === 0) {
       getResponse();
-    //   console.log(leaderboard)
     }
   });
 
@@ -37,17 +44,17 @@ const Leaderboard = () => {
           </tr>
         </thead>
         <tbody>
-          {leaderboard.map((playerResult, index) => (
-              {playerResult.map((result, index) => (
-               <tr>
-              <td key={index}>{playerResult.username}</td>
-              <td key={index}>{playerResult.results}</td>
-              <td key={index}>{playerResult.difficulty}</td>
-              <td key={index}>{playerResult.date}</td>
-            </tr>   
-              ))}
-          ))}
-          ; 
+          {leaderboard.map((playerResult, index) => {
+            return (
+              <tr>
+                <td key={index}>{playerResult.username}</td>
+                <td key={index}>{playerResult.score}</td>
+                <td key={index}>{playerResult.difficulty}</td>
+                <td key={index}>{playerResult.date}</td>
+              </tr>
+            )
+          })}
+          ;
         </tbody>
       </table>
     </div>
