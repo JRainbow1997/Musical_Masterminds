@@ -1,0 +1,43 @@
+.signin-form{
+    margin: 10px auto;
+    width: 30vw;
+    height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+    flex-direction: column;
+    font-size: 1.5em;
+    background-size: 400% 400%;
+    border-style: solid;
+    border-radius: 1em;
+    border-color: rgb(0, 62, 121);
+    padding: 1%;
+}
+.signin-form label{
+    text-align: left;
+    margin-bottom: -5vh;
+    padding: 0;
+}
+.signin-title{
+    margin: 0;
+}
+.signin-form input{
+    margin: 0;
+    padding: 0;
+    border-radius: 0.6em;
+    text-indent: 5px;
+    width: 100%;
+}
+.submit-signin{
+    border-radius: 0.5em;
+}
+.submit-signin:hover{
+    background-color: #7CAFFA;
+}
+.signup-link{
+    border-color: #7caefa7e;
+    border-style: outset;
+    border-bottom: 0;
+    border-right: 0;
+    border-left: 0;
+}

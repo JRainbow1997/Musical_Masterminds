@@ -43,8 +43,9 @@ const Signup = () => {
 
     return (
         <div className="signup">
-            <h1 className="signup-title">Sign Up</h1>
             <form onSubmit={getResponse} className="signup-form">
+                <h1 className="signup-title">Create Account</h1>
+                
                 <label htmlFor="username">Create a username</label>
                 <input id="username" type="text" name="username" placeholder="username" onChange={onChangeHandler}></input>
 
@@ -55,9 +56,9 @@ const Signup = () => {
                 <input id="password" type="password" name="password" placeholder="password" onChange={onChangeHandler}></input>
 
                 <label htmlFor="passwordCheck">Re-enter the password</label>
-                <input id="passwordCheck" type="password" name="passwordCheck" placeholder="passwordCheck" onChange={onChangeHandler}></input>
+                <input id="passwordCheck" type="password" name="passwordCheck" placeholder="verify password" onChange={onChangeHandler}></input>
 
-                <input type="submit" value="Submit"></input>
+                <input type="submit" value="Create Your Account" className="Submit"></input>
 
                 <a href="/" className="signin-page">Already have an account, Sign-in?</a>
             </form>
