@@ -3,7 +3,7 @@ import {useHistory} from "react-router-dom"
 import axios from 'axios';
 
 
-function Signin() {
+const Signin= () => {
     let history = useHistory();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -18,7 +18,7 @@ function Signin() {
 
     const onSubmit = (event) => {
         event.preventDefault();
-        axios.post('http://localhost:5000/users/Signin', {email, password}).then((res) => {
+        axios.post('http://localhost:5000/users/', {email, password}).then((res) => {
             if (res.data.status === 'OK') {
                 sessionStorage.setItem('signedIn', 'true');
                 sessionStorage.setItem('email', res.data.emailAddress);
