@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState, } from "react";
+import React, { useState, useEffect } from "react";
 import "./Quiz.css";
 
 const Quiz = () => {
@@ -28,27 +28,36 @@ const Quiz = () => {
             setAmount(event.target.value)
         }
     }
+    useEffect(() => {
+        if (!sessionStorage.getItem("signedIn")) {
+            return;
+        }
+    })
 
     return (
-        <div class="quizWrapper">
-            <h1>Quiz Page</h1>
-            <p>Select difficulity</p>
-            <form onSubmit={submitForm}>
-                <select name="difficulties" id="difficulty" onChange={onChangeHandler} value={difficulty}>
-                    <option value="easy">Easy</option>
-                    <option value="medium">Medium</option>
-                    <option value="hard">Hard</option>
-                </select>
-                <select name="amount" id="amount" onChange={onChangeHandler} value={amount}>
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="12">12</option>
-                </select>
-                <input type="submit" value="submit"></input>
-            </form>
+        <div>
+            {(!sessionStorage.getItem('signedIn')) ? <div><h1 className="title">You are not signed in</h1></div> :
+                <div class="quizWrapper">
+                    <h1>Quiz Page</h1>
+                    <p>Select difficulity</p>
+                    <form onSubmit={submitForm}>
+                        <select name="difficulties" id="difficulty" onChange={onChangeHandler} value={difficulty}>
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                        <select name="amount" id="amount" onChange={onChangeHandler} value={amount}>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="12">12</option>
+                        </select>
+                        <input type="submit" value="submit"></input>
+                    </form>
 
-            <h1>questions</h1>
-            
+                    <h1>questions</h1>
+
+                </div>
+            }
         </div>
     );
 };

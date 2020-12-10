@@ -21,8 +21,8 @@ function App() {
         <div className="App">
           <header className="AppHeader">
             <Switch>
-              <Route path = "/about" component = {NavbarSI}/>
-              <Route path = "/faq" component = {NavbarSI}/>
+              <Route path = "/about" component = {Navbar}/>
+              <Route path = "/faq" component = {Navbar}/>
               <Route path = "/leaderboard" component = {NavbarSI} />
               <Route path = "/main" component = {NavbarSI} />
               <Route path = "/profile" component = {NavbarSI} />

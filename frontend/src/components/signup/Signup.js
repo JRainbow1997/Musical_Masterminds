@@ -20,8 +20,9 @@ const Signup = () => {
         }).then((res) => {
             console.log(res.data.result);
             if (res.data.status === 'OK') {
-                sessionStorage.setItem('signedIn', 'true');
+                sessionStorage.setItem('signedIn', true);
                 sessionStorage.setItem('email', res.data.emailAddress);
+                sessionStorage.setItem('userId', res.data.userId);
                 history.push('/main');
             } else {
                 history.push('/signup');
