@@ -3,6 +3,7 @@ import "./Faq.css";
 
 const Faq = () => {
   return (
+    <div className="faq-background">
     <div class="faq-wrapper">
       <div class="faq-header">Frequently Asked Questions</div>
       <div className="faq-header">
@@ -60,6 +61,7 @@ const Faq = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
