@@ -37,7 +37,7 @@ const Quiz = () => {
     return (
         <div>
             {(!sessionStorage.getItem('signedIn')) ? <div><h1 className="title">You are not signed in</h1></div> :
-                <div class="quizWrapper">
+                <div className="quizWrapper">
                     <h1>Quiz Page</h1>
                     <p>Select difficulity</p>
                     <form onSubmit={submitForm}>

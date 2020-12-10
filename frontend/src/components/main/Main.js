@@ -18,7 +18,7 @@ function Main() {
     })
 
     return(
-    <div class="mainWrapper">
+    <div className="mainWrapper">
         {(!sessionStorage.getItem('signedIn')) ? <div><h1 className="title">You are not signed in</h1></div> :
         <h1>Main Page</h1>
         }

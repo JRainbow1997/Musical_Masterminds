@@ -6,7 +6,6 @@ import Faq from "./components/faq/Faq";
 import Leaderboard from "./components/leaderboard/Leaderboard";
 import Main from "./components/main/Main";
 import Navbar from "./components/navbar/Navbar";
-import NavbarSI from "./components/navbar/NavbarSignedIn";
 import Profile from "./components/profile/Profile";
 import Quiz from "./components/quiz/Quiz";
 import Signin from "./components/signin/Signin";
@@ -20,17 +19,7 @@ function App() {
       <BrowserRouter>
         <div className="App">
           <header className="AppHeader">
-            <Switch>
-              <Route path = "/about" component = {Navbar}/>
-              <Route path = "/faq" component = {Navbar}/>
-              <Route path = "/leaderboard" component = {NavbarSI} />
-              <Route path = "/main" component = {NavbarSI} />
-              <Route path = "/profile" component = {NavbarSI} />
-              <Route path = "/quiz" component = {NavbarSI} />
-              <Route path = "/" component = {Navbar} />
-              <Route path = "/signin" component = {Navbar} />
-              <Route path = "/signout" component = {Navbar} />
-            </Switch>
+            <Navbar />
           </header>
           <body className="AppBody">
             <Switch>

@@ -4,7 +4,7 @@ import "./PageNotFound.css";
 
 function PageNotFound() {
     return(
-    <div class="error-wrapper">
+    <div className="error-wrapper">
         <h1>ERROR 404</h1>
         <h3>You've gone off track!</h3>
         <h4>Click below to get back where you need to be.</h4>
