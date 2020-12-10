@@ -36,7 +36,10 @@ body {
     bottom: 0;
     left: 0;
     padding: 50px;
-    background: #fff;
+    background-image: url("../main/images/mt_background.jpg");
+    background-size: cover;
+    height: 100vh;
+    opacity: 0.9;
     transition: 1.5s;
     opacity: 1;
     visibility: visible;
@@ -55,10 +58,15 @@ body {
     opacity: 1;
     font-size: large;
   }
-  
-  /* Test code  */
- .screen:hover > .screen1 { 
-    opacity: 0;
-    color: black;
-    background-color: hotpink;
+
+  .content-text {
+    font-weight: 500;
+    line-height: 40px;
+    background-color: lightgray;
+    opacity: 0.9;
+    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+    padding: 2%;
+    width: 100%;
+    height: fit-content;
   }
+ 

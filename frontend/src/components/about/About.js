@@ -7,6 +7,7 @@ const About = () => {
       <section className="split">
         <div className="screen">
           <div className="content">
+            <div className="content-text">
             <h2>About</h2>
             <p>
               Musical Masterminds is a student built website, that allows users
@@ -31,6 +32,7 @@ const About = () => {
                 wearecodenation.com
               </a>
             </p>
+            </div>
           </div>
         </div>
         <div className="screen1">
