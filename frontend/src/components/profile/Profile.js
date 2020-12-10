@@ -8,7 +8,7 @@ function Profile() {
         }
     })
     return (
-        <div class="profileWrapper">
+        <div className="profileWrapper">
             {(!sessionStorage.getItem('signedIn')) ? <div><h1 className="title">You are not signed in</h1></div> :
                 <h1>Profile Page</h1>
             }
