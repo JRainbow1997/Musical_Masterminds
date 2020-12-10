@@ -11,7 +11,7 @@ const Leaderboard = () => {
         return { "username": item.username, "score": res.score, "difficulty": res.difficulty, "date": new Date(res.date).toDateString() };
       });
     });
-    return [].concat.apply([], changedResults).sort((a, b) => {return b.score - a.score}).slice(0, 9);
+    return [].concat.apply([], changedResults).sort((a, b) => { return b.score - a.score }).slice(0, 9);
   };
 
   const getResponse = () => {
@@ -31,31 +31,38 @@ const Leaderboard = () => {
       getResponse();
     }
   });
+  useEffect(() => {
+    if (!sessionStorage.getItem("signedIn")) {
+      return;
+    }
+  })
 
   return (
     <div className="leaderboardWrapper">
-      <table>
-        <thead>
-          <tr>
-            <th>Username</th>
-            <th>Score</th>
-            <th>Difficulty</th>
-            <th>Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          {leaderboard.map((playerResult, index) => {
-            return (
-              <tr>
-                <td key={index}>{playerResult.username}</td>
-                <td key={index}>{playerResult.score}</td>
-                <td key={index}>{playerResult.difficulty}</td>
-                <td key={index}>{playerResult.date}</td>
-              </tr>
-            )
-          })}
-        </tbody>
-      </table>
+      {(!sessionStorage.getItem('signedIn')) ? <div><h1 className="title">You are not signed in</h1></div> :
+        <table>
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Score</th>
+              <th>Difficulty</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            {leaderboard.map((playerResult, index) => {
+              return (
+                <tr>
+                  <td key={index}>{playerResult.username}</td>
+                  <td key={index}>{playerResult.score}</td>
+                  <td key={index}>{playerResult.difficulty}</td>
+                  <td key={index}>{playerResult.date}</td>
+                </tr>
+              )
+            })}
+          </tbody>
+        </table>
+      }
     </div>
   );
 };

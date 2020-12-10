@@ -21,7 +21,7 @@ const Signin= () => {
         event.preventDefault();
         axios.post('http://localhost:5000/users/', {email, password}).then((res) => {
             if (res.data.status === 'OK') {
-                sessionStorage.setItem('signedIn', 'true');
+                sessionStorage.setItem('signedIn', true);
                 sessionStorage.setItem('email', res.data.emailAddress);
                 sessionStorage.setItem('username', res.data.username);
                 sessionStorage.setItem('userId', res.data.userId);
