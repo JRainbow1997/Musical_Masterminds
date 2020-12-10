@@ -5,7 +5,6 @@ import Questions from "./Questions";
 import "./Quiz.css";
 
 const Quiz = () => {
-
     return (
         <div class="quizWrapper">
             <BrowserRouter>

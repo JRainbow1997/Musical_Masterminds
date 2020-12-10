@@ -1,10 +1,19 @@
+.faq-background {
+  background-image: url("../main/images/mt_background.jpg");
+  background-size: cover;
+  height: 100vh;
+  opacity: 0.9;
+}
+
 .faq-wrapper {
   background-color: rgb(0, 62, 121);
   position: relative;
+  top: 10%;
   margin-left: 5%;
   margin-right: 5%;
-  margin-top: 5%;
+  padding-top: 2%;
   padding-bottom: 1%;
+  box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
 }
 .faq-header {
   font-size: 280%;
