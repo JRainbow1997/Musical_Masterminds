@@ -5,6 +5,7 @@ const Faq = () => {
   return (
     <div className="faq-wrapper">
       <div className="faq-header">Frequently Asked Questions</div>
+    <div className="faq-background">
       <div className="faq-header">
         <div className="faq-content">
           <div className="faq-question">
@@ -60,6 +61,7 @@ const Faq = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
