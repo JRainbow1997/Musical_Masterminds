@@ -23,19 +23,19 @@ function App() {
           </header>
           <body className="AppBody">
             <Switch>
-              <Route exact path="/About" component={About} />        
-              <Route exact path="/Faq" component={Faq} /> 
-              <Route exact path="/Leaderboard" component={Leaderboard} />        
-              <Route exact path="/Main" component={Main} /> 
-              <Route exact path="/Profile" component={Profile} />        
-              <Route exact path="/Quiz" component={Quiz} /> 
-              <Route exact path="/" component={Signin} />        
+              <Route exact path="/About" component={About} />
+              <Route exact path="/Faq" component={Faq} />
+              <Route exact path="/Leaderboard" component={Leaderboard} />
+              <Route exact path="/Main" component={Main} />
+              <Route exact path="/Profile" component={Profile} />
+              <Route exact path="/Quiz" component={Quiz} />
+              <Route exact path="/" component={Signin} />
               <Route exact path="/Signup" component={Signup} />
-              <Route path = "/signout" component = {Signout} />
-              <Route path = "/404" component={ PageNotFound } />
+              <Route path="/signout" component={Signout} />
+              <Route path="/404" component={PageNotFound} />
               <Redirect to="404" />
             </Switch>
-          </body>              
+          </body>
         </div>
       </BrowserRouter>
     </React.Fragment>

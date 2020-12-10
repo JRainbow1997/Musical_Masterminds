@@ -14,7 +14,7 @@ function Navbar(props) {
         } else {
             setLoggedin(true)
         }
-    })
+    },[])
 
     return (
         <div>
@@ -40,7 +40,7 @@ function Navbar(props) {
                                 <li><Link to="/Signup">Sign Up</Link></li>
                             </> :
                             <>
-                            <li><Link to="/signout">Sign out</Link></li>
+                                <li><Link to="/signout">Sign out</Link></li>
                             </>
                         }
                     </ul>

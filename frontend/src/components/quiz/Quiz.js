@@ -9,8 +9,8 @@ const Quiz = () => {
         <div class="quizWrapper">
             <BrowserRouter>
                 <Switch>
-                    <Route exact path="/Quiz" component={LoadQuestions} /> 
-                    <Route exact path="/Questions" component={Questions} />  
+                    <Route exact path="/Quiz" component={LoadQuestions} />
+                    <Route exact path="/Questions" component={Questions} />
                 </Switch>
             </BrowserRouter>
         </div>
