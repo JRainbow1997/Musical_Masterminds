@@ -43,10 +43,11 @@ userSchema.statics.checkPassword = async function(email, password) {
     }
     
     if (await bcrypt.compare(password, user.password)) {
-        console.log("passwords dont match")
+        
         return true;
     }
-    return false;
+        console.log("passwords dont match")
+        return false;
 }
 
 module.exports = mongoose.model("Users", userSchema);

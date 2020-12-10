@@ -1,0 +1,86 @@
+.mainWrapper {
+  background-image: url("./images/mt_background.jpg");
+  background-size: cover;
+  min-height: 100vh;
+  opacity: 0.8;
+}
+
+.mainContent {
+  background-color: lightgray;
+  opacity: 0.8;
+  width: 50%;
+  position: absolute;
+  left: 25%;
+  height: 100vh;
+  box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+}
+
+.welcome {
+    position: relative;
+    padding-top: 8%;
+    text-align: center;
+    opacity: 1;
+    z-index: 3;
+}
+
+.quiz-btn {
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  opacity: 1;
+  z-index: 2;
+  line-height: 30px;
+  padding: 17px;
+  border-radius: 17px;
+  font-family: Georgia, serif;
+  font-weight: normal;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  background-image: linear-gradient(
+    to right,
+    rgb(28, 110, 164) 0%,
+    rgb(35, 136, 203) 50%,
+    rgb(20, 78, 117) 100%
+  );
+  box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+  border: 2px solid rgb(28, 110, 164);
+  display: inline-block;
+  position: relative;
+  left: 38%;
+  top: 45%;
+}
+.quiz-btn:hover {
+  background: #1c6ea4;
+}
+.quiz-btn:active {
+  background: #144e75;
+}
+
+.ldr-btn {
+    color: rgb(255, 255, 255);
+  font-size: 30px;
+  opacity: 1;
+  z-index: 2;
+  line-height: 30px;
+  padding: 17px;
+  border-radius: 17px;
+  font-family: Georgia, serif;
+  font-weight: normal;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  background-image: linear-gradient(
+    to right,
+    rgb(28, 110, 164) 0%,
+    rgb(35, 136, 203) 50%,
+    rgb(20, 78, 117) 100%
+  );
+  box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+  border: 2px solid rgb(28, 110, 164);
+  display: inline-block;
+  position: relative;
+  top: 51%;
+  left: 18%;
+}
