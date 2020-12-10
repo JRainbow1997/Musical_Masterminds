@@ -1,18 +1,19 @@
 .mainWrapper {
   background-image: url("./images/mt_background.jpg");
   background-size: cover;
-  min-height: 100vh;
+  min-height: 90vh;
   opacity: 0.9;
 }
 
 .mainContent {
   background-color: lightgray;
-  opacity: 0.8;
+  opacity: 0.9;
   width: 50%;
   position: absolute;
   left: 25%;
-  height: 100vh;
+  height: 90vh;
   box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+  
 }
 
 .welcome {
@@ -21,6 +22,8 @@
     text-align: center;
     opacity: 1;
     z-index: 3;
+    font-weight: 500;
+    line-height: 50px;
 }
 
 .quiz-btn {
@@ -48,7 +51,7 @@
   display: inline-block;
   position: relative;
   left: 38%;
-  top: 45%;
+  top: 15%;
 }
 .quiz-btn:hover {
   background: #1c6ea4;
@@ -81,6 +84,6 @@
   border: 2px solid rgb(28, 110, 164);
   display: inline-block;
   position: relative;
-  top: 51%;
-  left: 18%;
+  top: 22%;
+  left: 16%;
 }

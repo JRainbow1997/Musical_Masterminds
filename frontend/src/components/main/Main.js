@@ -33,7 +33,7 @@ function Main() {
                 <h2>Get Started by hitting the TAKE QUIZ button</h2>
                 </div>
                 <a className="quiz-btn" href="/quiz">TAKE THE QUIZ</a>
-                <a className="ldr-btn" href="/leaderboard">Latest Leaders</a>
+                <a className="ldr-btn" href="/leaderboard">LATEST LEADERS</a>
             </div>
         }
     </div>
