@@ -4,6 +4,9 @@ import { useHistory } from "react-router-dom"
 import "./Quiz.css";
 
 const LoadQuestions = () => {
+
+    document.title = "Quiz | Musical Masterminds";
+
     let history = useHistory();
     const [difficulty, setDifficulty] = useState("easy");
     const [amount, setAmount] = useState("5");

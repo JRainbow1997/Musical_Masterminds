@@ -4,6 +4,9 @@ import { useHistory } from "react-router-dom"
 import "./Signup.css";
 
 const Signup = () => {
+
+    document.title = "Signup | Musical Masterminds";
+
     let history = useHistory();
     const [username, setUser] = useState("");
     const [email, setEmail] = useState("");
