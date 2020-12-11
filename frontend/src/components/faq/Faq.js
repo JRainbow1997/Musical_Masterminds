@@ -3,6 +3,7 @@ import IdleTimerContainer from "../IdleTimerComponent/IdleTimerComponent";
 import "./Faq.css";
 
 const Faq = () => {
+  document.title = "FAQ | Musical Masterminds";
   return (
     <div className="faq-background">
       <IdleTimerContainer />
