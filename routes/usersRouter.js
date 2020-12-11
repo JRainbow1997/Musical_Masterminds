@@ -57,4 +57,16 @@ router.post("/", async (req, res) => {
     res.status(401).json({ status: "Not OK", err: "Unauthorised." });
 });
 
+router.post("/updatepassword", async (req, res) => {
+    User.findByIdAndUpdate(req.body.id, {password: await bcrypt.hash(req.body.password, 10)}, (err, user) => { 
+        if (err) { 
+            res.status(500).json({ status: "Not OK", err });
+        } else if (!user) {
+            res.status(404).json({ status: "Not OK", err: "User doesn't exist." });
+        } else {
+            res.status(200).json({ status: "Updated password", user});
+        }
+    });
+});
+
 module.exports = router;
