@@ -1,5 +1,6 @@
 import React from "react";
 import "./Quiz.css";
+import IdleTimerContainer from "../IdleTimerComponent/IdleTimerComponent";
 
 const Questions = () => {
     let textInput = React.createRef();
@@ -81,6 +82,7 @@ const Questions = () => {
 
     return (
         <div className="curtai">
+            <IdleTimerContainer />
             <div className="left-pane">
                 {/* <h2 className="">{leftQuote}</h2> */}
 
