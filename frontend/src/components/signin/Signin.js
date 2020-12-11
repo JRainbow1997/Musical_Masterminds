@@ -20,15 +20,16 @@ const Signin = () => {
     const onSubmit = (event) => {
         event.preventDefault();
         axios.post('api/users/', { email, password }).then((res) => {
+            console.log(res.data)
             if (res.data.status === 'OK') {
                 sessionStorage.setItem('signedIn', true);
                 sessionStorage.setItem('email', res.data.emailAddress);
                 sessionStorage.setItem('username', res.data.username);
                 sessionStorage.setItem('userId', res.data.userId);
                 history.push('/main');
-            } else {
-                history.push('/signup');
             }
+        }).catch((err) => {
+            alert( "Email Address or Password incorrect");
         });
     }
 

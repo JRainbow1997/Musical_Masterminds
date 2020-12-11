@@ -6,7 +6,7 @@ const bcrypt = require("bcrypt");
 router.get("/", (req, res) => {
     User.find({}, (err, users) => {
         if (err) {
-            console.log(err);
+            // console.log(err);
             res.status(500).json({ status: "Not OK", err });
         } else {
             res.status(200).json({ status: "OK", users });
@@ -21,7 +21,6 @@ router.post("/signup", async (req, res) => {
     req.body.password = await bcrypt.hash(req.body.password, 10)
     new User(req.body).save((err, result) => {
         if (err) {
-            console.log(err);
             res.status(500).json({ status: "Not OK", err });
         } else {
             res.status(200).send({ status: "OK", result });
@@ -46,7 +45,6 @@ router.post("/", async (req, res) => {
     if (await User.checkPassword(email, password)) {
         User.findOne({ emailAddress: email }, (err, user) => {
             if (err) {
-                console.log(err);
                 res.status(500).json({ status: "Not OK", err });
             } else if (!user) {
                 res.status(404).json({ status: "Not OK", err: "User doesn't exist." });
