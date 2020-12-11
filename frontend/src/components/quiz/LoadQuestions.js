@@ -64,7 +64,7 @@ const LoadQuestions = () => {
                     <option value="10">10</option>
                     <option value="12">12</option>
                 </select>
-                <input type="submit" value="submit"></input>
+                <input type="submit" value="submit" id="submit"></input>
             </form>
         </div>
     );

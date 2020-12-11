@@ -1,0 +1,7 @@
+select:hover {
+    cursor: url("../image/purplecursor.png"), auto;
+}
+#submit:hover{
+    cursor: url("../image/greencursor.png"), auto;
+}
+
