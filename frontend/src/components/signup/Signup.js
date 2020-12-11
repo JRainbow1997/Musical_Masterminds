@@ -23,10 +23,9 @@ const Signup = () => {
                 sessionStorage.setItem('email', res.data.emailAddress);
                 sessionStorage.setItem('userId', res.data.userId);
                 history.push('/main');
-            } else {
-                alert("Unable to set up account.")
-                history.push('/signup');
             }
+        }).catch((err) => {
+            alert( "Unable to set up account.")
         })
     };
 

@@ -46,7 +46,7 @@ userSchema.statics.checkPassword = async function(email, password) {
         
         return true;
     }
-        console.log("passwords dont match")
+        console.log("passwords don't match")
         return false;
 }
 
