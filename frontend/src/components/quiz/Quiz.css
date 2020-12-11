@@ -23,9 +23,12 @@
     z-index: 1;
     text-align: center;
   }
-    .curtain:hover > .left-panel{
+  .curtain:hover > .left-panel{
       transform: translateX(-100%);
-    }
-    .curtain:hover > .right-panel{
+  }
+  .curtain:hover > .right-panel{
       transform: translateX(100%);
-    }
+  }
+.portrait{
+  visibility: hidden;
+}
