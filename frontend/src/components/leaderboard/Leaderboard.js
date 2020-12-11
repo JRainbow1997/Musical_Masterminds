@@ -17,7 +17,7 @@ const Leaderboard = () => {
   const getResponse = () => {
     // let userId = sessionStorage.getItem("userId");
     axios
-      .post("http://localhost:5000/leaderboard")
+      .post("api/leaderboard")
       .then((res) => {
         setLeaderboard(parseData(res.data.results));
       })

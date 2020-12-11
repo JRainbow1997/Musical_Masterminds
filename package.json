@@ -4,6 +4,8 @@
   "description": "Create a Quiz application with a login, sign up &amp; timeout feature",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "heroku-postbuild": "cd frontend && npm install && npm run build", 
     "backend": "nodemon index.js",
     "frontend": "npm start --prefix frontend",
     "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
