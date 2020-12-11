@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import IdleTimerContainer from "../IdleTimerComponent/IdleTimerComponent";
 import "./Main.css";
 
 function Main() {
@@ -19,6 +20,7 @@ function Main() {
 
   return (
     <div className="mainWrapper">
+      <IdleTimerContainer />
       {(!sessionStorage.getItem('signedIn')) ? <div><h1 className="title">You are not signed in</h1></div> :
         <div className="mainContent">
           <div className="welcome">

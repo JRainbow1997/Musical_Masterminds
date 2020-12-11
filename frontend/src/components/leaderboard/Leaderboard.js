@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import IdleTimerContainer from "../IdleTimerComponent/IdleTimerComponent";
 import "./Leaderboard.css";
 
 const Leaderboard = () => {
@@ -39,6 +40,7 @@ const Leaderboard = () => {
 
   return (
     <div className="leaderboardWrapper">
+      <IdleTimerContainer />
       {(!sessionStorage.getItem('signedIn')) ? <div><h1 className="title">You are not signed in</h1></div> :
         <table>
           <thead>

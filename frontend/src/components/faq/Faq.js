@@ -1,9 +1,11 @@
 import React from "react";
+import IdleTimerContainer from "../IdleTimerComponent/IdleTimerComponent";
 import "./Faq.css";
 
 const Faq = () => {
   return (
     <div className="faq-background">
+      <IdleTimerContainer />
       <div className="faq-wrapper">
         <div className="faq-header">Frequently Asked Questions</div>
         <div className="faq-content">

@@ -10,7 +10,7 @@ import Profile from "./components/profile/Profile";
 import Quiz from "./components/quiz/Quiz";
 import Signin from "./components/signin/Signin";
 import Signup from "./components/signup/Signup";
-import Signout from "./components/signout/Signout"
+import Signout from "./components/signout/Signout";
 import "./App.css";
 
 function App() {

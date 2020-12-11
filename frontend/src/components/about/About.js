@@ -1,9 +1,11 @@
 import React from "react";
+import IdleTimerContainer from "../IdleTimerComponent/IdleTimerComponent";
 import "./About.css";
 
 const About = () => {
   return (
     <div className="about-wrapper">
+      <IdleTimerContainer />
       <section className="split">
         <div className="screen">
           <div className="content">
