@@ -18,16 +18,16 @@ router.get("/", (req, res) => {
 router.post("/", (req, res) => {
     User.find({}, async (err, users) => {
         if (err) {
-            res.status(500).json({status: "Not OK", err});
+            res.status(500).json({ status: "Not OK", err });
         } else {
             const results = await Promise.all(users.map(async (user) => {
-                const allResults = await LeaderBoard.find({userId: user._id}).exec();
-                return {username: user.username, results: allResults}
+                const allResults = await LeaderBoard.find({ userId: user._id }).exec();
+                return { username: user.username, results: allResults }
             }));
-            res.status(200).json({status: "OK", results});
+            res.status(200).json({ status: "OK", results });
         }
     });
 });
-    
+
 
 module.exports = router;

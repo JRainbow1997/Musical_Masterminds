@@ -8,30 +8,30 @@ const About = () => {
         <div className="screen">
           <div className="content">
             <div className="content-text">
-            <h2>About</h2>
-            <p>
-              Musical Masterminds is a student built website, that allows users
-              to create an account with signup, to log in with signin and then
+              <h2>About</h2>
+              <p>
+                Musical Masterminds is a student built website, that allows users
+                to create an account with signup, to log in with signin and then
               take part in a Musical Theatre themed quiz, using an API url from{" "}
-              <a target="#" href="https://opentdb.com">
-                opentdb.
+                <a target="#" href="https://opentdb.com">
+                  opentdb.
               </a>
+              </p>
+              <p>
+                The user can select the difficulty of the questions, ranging from
+                Easy / Medium / Hard, to suit their preferences and test their
+                knowledge. The user can also input how many questions they would
+                like to answer.
             </p>
-            <p>
-              The user can select the difficulty of the questions, ranging from
-              Easy / Medium / Hard, to suit their preferences and test their
-              knowledge. The user can also input how many questions they would
-              like to answer.
-            </p>
-            <p>
-              This project was built by Josh, Maddy, and Joe. Students who are
-              partaking in the CodeNation Master: Coding course, an intense
-              online bootcamp, designed for an in-depth look at full-stack
+              <p>
+                This project was built by Josh, Maddy, and Joe. Students who are
+                partaking in the CodeNation Master: Coding course, an intense
+                online bootcamp, designed for an in-depth look at full-stack
               development. For more information on CodeNation, please visit{" "}
-              <a target="#" href="https://wearecodenation.com/">
-                wearecodenation.com
+                <a target="#" href="https://wearecodenation.com/">
+                  wearecodenation.com
               </a>
-            </p>
+              </p>
             </div>
           </div>
         </div>

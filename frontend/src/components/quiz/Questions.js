@@ -16,17 +16,17 @@ const Questions = () => {
     const shuffleAnswers = () => {
         console.log(questions);
         console.log(answers);
-        if (questionAnswers < answers.length){
+        if (questionAnswers < answers.length) {
             choice = '';
             specificAnswers = [];
             document.getElementById("question").innerHTML = questions[questionNum];
             questionNum += 1;
             correctAnswer = answers[questionAnswers]
-            if (type[questionNum - 1] === "multiple"){
+            if (type[questionNum - 1] === "multiple") {
                 document.getElementById("answer3").style.visibility = "visible"
                 document.getElementById("answer4").style.visibility = "visible"
                 questionAnswers += 4;
-                for (let x = questionAnswers - 4; x < questionAnswers; x++){
+                for (let x = questionAnswers - 4; x < questionAnswers; x++) {
                     specificAnswers.push(answers[x]);
                 }
                 for (let i = specificAnswers.length - 1; i > 0; i--) { //fisher-yates shuffle
@@ -39,12 +39,12 @@ const Questions = () => {
                 document.getElementById("answer2").innerHTML = specificAnswers[1];
                 document.getElementById("answer3").innerHTML = specificAnswers[2];
                 document.getElementById("answer4").innerHTML = specificAnswers[3];
-            }else if (type[questionNum - 1] === "boolean"){
+            } else if (type[questionNum - 1] === "boolean") {
                 questionAnswers += 2;
-                for (let x = questionAnswers - 2; x < questionAnswers; x++){
+                for (let x = questionAnswers - 2; x < questionAnswers; x++) {
                     specificAnswers.push(answers[x]);
                 }
-                if (specificAnswers[0] === "False"){
+                if (specificAnswers[0] === "False") {
                     specificAnswers.reverse();
                 }
                 document.getElementById("answer1").innerHTML = specificAnswers[0];
@@ -52,38 +52,38 @@ const Questions = () => {
                 document.getElementById("answer3").style.visibility = "hidden"
                 document.getElementById("answer4").style.visibility = "hidden"
             }
-        }else{alert(`Gameover! you got ${finalScore} right`)}
+        } else { alert(`Gameover! you got ${finalScore} right`) }
     };
 
     const chooseAnswer = (event) => {
         choice = event.target.innerHTML;
         console.log(choice);
     }
-    
+
     const submit = () => {
-        if (choice === ''){
+        if (choice === '') {
             alert("You must select an answer first!")
-        }else{
-            if (choice === correctAnswer){
+        } else {
+            if (choice === correctAnswer) {
                 console.log("CORRECT")
                 finalScore += 1;
-            }else{
+            } else {
                 console.log("INCORRECT")
             }
             shuffleAnswers()
         }
     }
-        // const leftInspire = ["Good ", "Keep ", "Almost ", "You Are "]
-        // const rightInspire = ["Job!", "Going!", "There!", "Amazing!"]
-        // const inspire = Math.floor(Math.random() * leftInspire.length);
-        // const leftQuote = leftInspire[inspire];
-        // const rightQuote = rightInspire[inspire];
+    // const leftInspire = ["Good ", "Keep ", "Almost ", "You Are "]
+    // const rightInspire = ["Job!", "Going!", "There!", "Amazing!"]
+    // const inspire = Math.floor(Math.random() * leftInspire.length);
+    // const leftQuote = leftInspire[inspire];
+    // const rightQuote = rightInspire[inspire];
 
-    return(
-        <div className="curtai">    
+    return (
+        <div className="curtai">
             <div className="left-pane">
                 {/* <h2 className="">{leftQuote}</h2> */}
-                
+
             </div>
 
             <div className="right-pane">
@@ -91,7 +91,7 @@ const Questions = () => {
             </div>
 
             <div className="content">
-            <button onClick={shuffleAnswers}>Start</button>
+                <button onClick={shuffleAnswers}>Start</button>
                 <p id="question">{questions[questionNum - 1]}</p>
                 <div>
                     <button type="button" id="answer1" ref={textInput} onClick={chooseAnswer}>1</button>

@@ -1,10 +1,10 @@
-import React, {useState} from "react";
-import {useHistory} from "react-router-dom"
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom"
 import axios from 'axios';
 import "./Signin.css"
 
 
-const Signin= () => {
+const Signin = () => {
     let history = useHistory();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -14,12 +14,12 @@ const Signin= () => {
             setEmail(event.target.value);
         } else if (event.target.id === "password") {
             setPassword(event.target.value);
-        } 
+        }
     }
 
     const onSubmit = (event) => {
         event.preventDefault();
-        axios.post('http://localhost:5000/users/', {email, password}).then((res) => {
+        axios.post('http://localhost:5000/users/', { email, password }).then((res) => {
             if (res.data.status === 'OK') {
                 sessionStorage.setItem('signedIn', true);
                 sessionStorage.setItem('email', res.data.emailAddress);
@@ -38,13 +38,13 @@ const Signin= () => {
                 <h1 className="signin-title">Sign in</h1>
 
                 <label htmlFor="email">Enter your email address</label>
-                <input onChange = {onChange} value = {email} id="email" type="email" name="email" placeholder="Username/email"></input>
+                <input onChange={onChange} value={email} id="email" type="email" name="email" placeholder="Username/email"></input>
 
                 <label htmlFor="password">Enter your password</label>
-                <input onChange = {onChange} value = {password} id="password" type="password" name="password" placeholder="Password"></input>
+                <input onChange={onChange} value={password} id="password" type="password" name="password" placeholder="Password"></input>
 
-                <input id="submit-signin" className = "submit-signin" type="submit" value="Sign In"></input>
-                
+                <input id="submit-signin" className="submit-signin" type="submit" value="Sign In"></input>
+
                 <a href="/signup" className="signup-link">Create an Account</a>
             </form>
         </div>

@@ -17,14 +17,14 @@ const LoadQuestions = () => {
                 let questions = [];
                 let type = [];
                 let answers = [];
-                while (i != amount){
+                while (i != amount) {
                     questions.push(res.data.results[i].question);
                     type.push(res.data.results[i].type);
                     answers.push(res.data.results[i].correct_answer);
-                    if (type[i] === "boolean"){
+                    if (type[i] === "boolean") {
                         answers.push(res.data.results[i].incorrect_answers[0]);
-                    }else if (type[i] === "multiple"){
-                        for (let j = 0; j<3; j++){
+                    } else if (type[i] === "multiple") {
+                        for (let j = 0; j < 3; j++) {
                             answers.push(res.data.results[i].incorrect_answers[j]);
                         }
                     }

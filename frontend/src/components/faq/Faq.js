@@ -3,17 +3,16 @@ import "./Faq.css";
 
 const Faq = () => {
   return (
-    <div className="faq-wrapper">
-      <div className="faq-header">Frequently Asked Questions</div>
     <div className="faq-background">
-      <div className="faq-header">
+      <div className="faq-wrapper">
+        <div className="faq-header">Frequently Asked Questions</div>
         <div className="faq-content">
           <div className="faq-question">
             <input id="q0" type="checkbox" className="panel" />
             <div className="plus">🎶</div>
             <label htmlFor="q0" className="panel-title">
               What is this site?
-            </label>
+              </label>
             <div className="panel-content">
               <p>A Musical Theatre Quiz website which lets you test your knowledge on a vairety of musical based questions</p>
             </div>
@@ -29,9 +28,9 @@ const Faq = () => {
             <div className="panel-content">
               <p>You can choose between:</p>
               <ul>
-                  <li>Easy</li>
-                  <li>Medium</li>
-                  <li>Hard</li>
+                <li>Easy</li>
+                <li>Medium</li>
+                <li>Hard</li>
               </ul>
             </div>
           </div>
@@ -61,7 +60,6 @@ const Faq = () => {
           </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };

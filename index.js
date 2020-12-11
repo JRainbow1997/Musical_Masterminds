@@ -7,8 +7,8 @@ const mongoose = require("mongoose");
 
 require("dotenv").config();
 
-mongoose.connect(process.env.mongoConnectionString,{
-    useNewUrlParser:true,
+mongoose.connect(process.env.mongoConnectionString, {
+    useNewUrlParser: true,
     useUnifiedTopology: true
 })
 const connection = mongoose.connection;
@@ -18,8 +18,8 @@ connection.once("open", function () {
 })
 
 app.use(cors());
-app.use(session({resave: true, saveUninitialized: true, secret: 'asdf'}));
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(session({ resave: true, saveUninitialized: true, secret: 'asdf' }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 const indexRouter = require("./routes/indexRouter");

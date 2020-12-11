@@ -32,11 +32,11 @@ router.post("/signup", async (req, res) => {
 router.delete("/", async (req, res) => {
     User.findByIdAndDelete(req.body.id, (err, docs) => {
         if (err) {
-            res.status(500).json({status: "Not OK"})
-        } else if (! docs){
-            res.status(404).json({status: "Not OK"})
+            res.status(500).json({ status: "Not OK" })
+        } else if (!docs) {
+            res.status(404).json({ status: "Not OK" })
         } else {
-            res.status(200).json({status: "OK", docs})    
+            res.status(200).json({ status: "OK", docs })
         }
     });
 });
@@ -44,17 +44,17 @@ router.delete("/", async (req, res) => {
 router.post("/", async (req, res) => {
     const { email, password } = req.body;
     if (await User.checkPassword(email, password)) {
-      User.findOne({ emailAddress: email }, (err, user) => {
-        if (err) {
-          console.log(err);
-          res.status(500).json({ status: "Not OK", err });
-        } else if (!user) {
-          res.status(404).json({ status: "Not OK", err: "User doesn't exist." });
-        } else {
-          res.status(200).json({ status: "OK", emailAddress: user.emailAddress, username: user.username, userId : user._id });
-        }
-      });
-      return;
+        User.findOne({ emailAddress: email }, (err, user) => {
+            if (err) {
+                console.log(err);
+                res.status(500).json({ status: "Not OK", err });
+            } else if (!user) {
+                res.status(404).json({ status: "Not OK", err: "User doesn't exist." });
+            } else {
+                res.status(200).json({ status: "OK", emailAddress: user.emailAddress, username: user.username, userId: user._id });
+            }
+        });
+        return;
     }
     res.status(401).json({ status: "Not OK", err: "Unauthorised." });
 });
