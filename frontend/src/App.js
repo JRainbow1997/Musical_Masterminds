@@ -5,7 +5,7 @@ import PageNotFound from "./components/error/PageNotFound";
 import Faq from "./components/faq/Faq";
 import Leaderboard from "./components/leaderboard/Leaderboard";
 import Main from "./components/main/Main";
-import Navbar from "./components/navbar/Navbar";
+import Navbar from "./components/navbar/navbar";
 import Profile from "./components/profile/Profile";
 import Quiz from "./components/quiz/Quiz";
 import Signin from "./components/signin/Signin";
