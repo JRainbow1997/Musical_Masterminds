@@ -1,3 +1,9 @@
+button:hover{
+  cursor: url("../image/purplecursor.png"), auto;
+}
+#answer1, #answer2, #answer3, #answer4, #submit :hover{
+  cursor: url("../image/purplecursor.png"), auto;
+}
 .curtain {
     width: 100%;
     height: 100vh;

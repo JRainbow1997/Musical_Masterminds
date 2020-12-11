@@ -20,7 +20,7 @@ const Leaderboard = () => {
     const result = [].concat.apply([], changedResults).sort((a, b) => { return b.score - a.score }).slice(0, 9);
     if (LBFilter != "all") {
       return (result.filter((result) => { return (result.difficulty == LBFilter) }));
-    } 
+    }
     return result
   };
 
@@ -61,14 +61,14 @@ const Leaderboard = () => {
         <div>
           <div>
             <p>Which leaderboard would you like to view?</p>
-            <form onSubmit={onSubmit}>
+            <form id="forms" onSubmit={onSubmit}>
               <select name="difficulties" id="difficulty" onChange={onChangeHandler}>
                 <option value="easy">Easy</option>
                 <option value="medium">Medium</option>
                 <option value="hard">Hard</option>
                 <option value="all" selected>All</option>
               </select>
-              <input type="submit" value="submit"></input>
+              <input type="submit" value="submit" id="submit"></input>
             </form>
           </div>
           <table>

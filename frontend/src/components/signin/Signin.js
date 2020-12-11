@@ -20,7 +20,6 @@ const Signin = () => {
     const onSubmit = (event) => {
         event.preventDefault();
         axios.post('api/users/', { email, password }).then((res) => {
-            console.log(res.data)
             if (res.data.status === 'OK') {
                 sessionStorage.setItem('signedIn', true);
                 sessionStorage.setItem('email', res.data.emailAddress);

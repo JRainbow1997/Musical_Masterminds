@@ -18,8 +18,6 @@ const Questions = () => {
     let correctAnswer = '';
 
     const shuffleAnswers = () => {
-        console.log(questions);
-        console.log(answers);
         if (questionAnswers < answers.length) {
             choice = '';
             specificAnswers = [];
@@ -61,7 +59,6 @@ const Questions = () => {
 
     const chooseAnswer = (event) => {
         choice = event.target.innerHTML;
-        console.log(choice);
     }
 
     const submit = () => {
@@ -111,7 +108,7 @@ const Questions = () => {
                     <button type="button" id="answer4" ref={textInput} onClick={chooseAnswer}>4</button>
                 </div>
                 <div>
-                    <button type="submit" onClick={submit}>Lock in!</button>
+                    <button type="submit" onClick={submit} id="submit">Lock in!</button>
                 </div>
             </div>
         </div>
