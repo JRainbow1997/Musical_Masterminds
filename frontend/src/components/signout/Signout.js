@@ -2,6 +2,9 @@ import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom"
 
 const Signout = () => {
+
+    document.title = "Signed Out | Musical Masterminds";
+
     let history = useHistory();
     sessionStorage.removeItem("signedIn");
     sessionStorage.removeItem("email");

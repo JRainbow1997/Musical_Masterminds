@@ -4,6 +4,9 @@ import IdleTimerContainer from "../IdleTimerComponent/IdleTimerComponent";
 import "./Leaderboard.css";
 
 const Leaderboard = () => {
+
+  document.title = "Leaderboards | Musical Masterminds";
+
   const [leaderboard, setLeaderboard] = useState([]);
 
   const parseData = (data) => {

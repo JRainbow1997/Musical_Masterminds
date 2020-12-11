@@ -3,6 +3,9 @@ import "./Quiz.css";
 import IdleTimerContainer from "../IdleTimerComponent/IdleTimerComponent";
 
 const Questions = () => {
+
+    document.title = "Quiz | Musical Masterminds";
+
     let textInput = React.createRef();
     let questions = JSON.parse(sessionStorage.getItem("Questions"));
     let type = JSON.parse(sessionStorage.getItem("Type"));

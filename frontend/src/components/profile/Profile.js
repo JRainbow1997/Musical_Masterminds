@@ -3,6 +3,9 @@ import IdleTimerContainer from "../IdleTimerComponent/IdleTimerComponent";
 import "./Profile.css";
 
 function Profile() {
+
+    document.title = "Profile | Musical Masterminds";
+
     useEffect(() => {
         if (!sessionStorage.getItem("signedIn")) {
             return;

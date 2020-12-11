@@ -3,6 +3,7 @@ import IdleTimerContainer from "../IdleTimerComponent/IdleTimerComponent";
 import "./About.css";
 
 const About = () => {
+  document.title = "About | Musical Masterminds";
   return (
     <div className="about-wrapper">
       <IdleTimerContainer />
