@@ -14,8 +14,12 @@ function Profile() {
     return (
         <div className="profileWrapper">
             <IdleTimerContainer />
-            {(!sessionStorage.getItem('signedIn')) ? <div><h1 className="title">You are not signed in</h1></div> :
-                <h1>Profile Page</h1>
+            {(!sessionStorage.getItem('signedIn')) ? 
+                <div><h1 className="title">You are not signed in</h1></div> :
+                <div>
+                    <h2>{sessionStorage.getItem("username")}</h2>
+                    <input type="password" placeholder="Reset Password"></input>
+                </div>  
             }
         </div>
     );
