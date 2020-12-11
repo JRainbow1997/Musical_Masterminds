@@ -27,6 +27,7 @@ const Signin = () => {
                 sessionStorage.setItem('userId', res.data.userId);
                 history.push('/main');
             } else {
+                alert("Email Address or Password incorrect")
                 history.push('/signup');
             }
         });
