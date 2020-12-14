@@ -28,3 +28,6 @@
 .lock-in{
     width: 20%;
 }
+.final{
+    visibility: hidden;
+  }
