@@ -5,6 +5,7 @@ import Oklahoma from "./images/Oklahoma.jpg";
 import Wicked from "./images/Wicked.png";
 import Hercules from "./images/Hercules.jpg";
 import "./Quiz.css";
+import { text } from "body-parser";
 
 const LoadQuestions = () => {
 
@@ -12,7 +13,7 @@ const LoadQuestions = () => {
 
     let history = useHistory();
     const [difficulty, setDifficulty] = useState("easy");
-    const [amount, setAmount] = useState("5");
+    const [amount, setAmount] = useState("4");
 
     const submitForm = (event) => {
         let i = 0;
@@ -51,19 +52,36 @@ const LoadQuestions = () => {
             document.getElementById("portrait").style.visibility = "visible"
             if ((event.target.value) === "easy"){
                 document.getElementById("portrait").src = Oklahoma;
-                document.getElementById("quote").innerHTML = "\"I\'ve got a wonderful feeling,\n everything's going my way!\" ~ Richard Rodgers"
+                document.getElementById("quote").innerHTML = "\"I\'ve got a wonderful feeling,\n everything's going my way!\" ~ Richard Rodgers";
             }else if ((event.target.value) === "medium"){
                 document.getElementById("portrait").src = Wicked;
-                document.getElementById("quote").innerHTML = "\"It\'s time to trust my instincts\n close my eyes and LEAP\" ~ Stephen Schwartz"
+                document.getElementById("quote").innerHTML = "\"It\'s time to trust my instincts\n close my eyes and LEAP\" ~ Stephen Schwartz";
             }else if ((event.target.value) === "hard"){
                 document.getElementById("portrait").src = Hercules;
-                document.getElementById("quote").innerHTML = "\"I will beat the odds, I can go the distance, I will face\n the world fearless, proud & strong!\" ~ Alan Menken"
+                document.getElementById("quote").innerHTML = "\"I will beat the odds, I can go the distance, I will face\n the world fearless, proud & strong!\" ~ Alan Menken";
             }
         } else if (event.target.id === "amount") {
-            setAmount(event.target.value)
+            setAmount(event.target.value);
         }
     }
-
+    const lookup = {
+        "easy":[
+            {id: '4', text: 'Half of the Questions (4)'},
+            {id: '6', text: 'Most of the Questions (6)'},
+            {id: '8', text: 'All of the Questions (8)'},
+        ],
+        "medium":[
+            {id: '6', text: 'Half of the Questions (6)'},
+            {id: '10', text: 'Most of the Questions (10)'},
+            {id: '13', text: 'All of the Questions (13)'},
+        ],
+        "hard":[
+            {id: '5', text: 'Half of the Questions (5)'},
+            {id: '8', text: 'Most of the Questions (8)'},
+            {id: '10', text: 'All of the Questions (10)'},
+        ]
+    }
+    const options = lookup[difficulty];
     return (
         <div class="quizWrapper">
             <form className="quizForm" onSubmit={submitForm}>
@@ -75,9 +93,7 @@ const LoadQuestions = () => {
                 </select>
                 <label name="amount">Select Number of Questions</label>
                 <select name="amount" id="amount" onChange={onChangeHandler} value={amount}>
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="12">12</option>
+                    {options.map(o => <option key={o.id} value={o.id}>{o.text}</option>)}
                 </select>
                 <input type="submit" value="submit"></input>
             </form>

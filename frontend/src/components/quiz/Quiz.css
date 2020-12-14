@@ -25,7 +25,7 @@
   margin: 0;
 }
 .quizForm > input, .quizForm > select{
-  width: 200px;
+  width: 300px;
 }
 .quizForm > input{
   color: rgb(255, 255, 255);
