@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import IdleTimerContainer from "../IdleTimerComponent/IdleTimerComponent";
+import NotSignedIn from "../notSignedIn/NotSignedIn";
 import "./Leaderboard.css";
 
 
@@ -18,8 +19,8 @@ const Leaderboard = () => {
       });
     });
     const result = [].concat.apply([], changedResults).sort((a, b) => { return b.score - a.score }).slice(0, 9);
-    if (LBFilter != "all") {
-      return (result.filter((result) => { return (result.difficulty == LBFilter) }));
+    if (LBFilter !== "all") {
+      return (result.filter((result) => { return (result.difficulty === LBFilter) }));
     }
     return result
   };
@@ -48,19 +49,15 @@ const Leaderboard = () => {
       getResponse();
     }
   });
-  useEffect(() => {
-    if (!sessionStorage.getItem("signedIn")) {
-      return;
-    }
-  })
 
   return (
-    <div className="leaderboardWrapper">
+    <div className="LB-background">
       <IdleTimerContainer />
-      {(!sessionStorage.getItem('signedIn')) ? <div><h1 className="title">You are not signed in</h1></div> :
-        <div>
+      {(!sessionStorage.getItem('signedIn')) ? <div><NotSignedIn/></div> :
+        <div className="LB-Content">
           <div>
-            <p>Which leaderboard would you like to view?</p>
+            <h1 className="LB-title">Leaderboard</h1>
+            <h2>Which leaderboard would you like to view?</h2>
             <form id="forms" onSubmit={onSubmit}>
               <select name="difficulties" id="difficulty" onChange={onChangeHandler}>
                 <option value="easy">Easy</option>
@@ -71,7 +68,7 @@ const Leaderboard = () => {
               <input type="submit" value="submit" id="submit"></input>
             </form>
           </div>
-          <table>
+          <table className="LB-table">
             <thead>
               <tr>
                 <th>Username</th>

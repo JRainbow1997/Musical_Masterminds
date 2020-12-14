@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import IdleTimerContainer from "../IdleTimerComponent/IdleTimerComponent";
+import NotSignedIn from "../notSignedIn/NotSignedIn";
 import "./Profile.css";
 
 function Profile() {
@@ -41,7 +42,6 @@ function Profile() {
 
     return (
         <div className="profileWrapper">
-            
             {(!sessionStorage.getItem('signedIn')) ? 
                 <div><h1 className="title">You are not signed in</h1></div> :
                 <div className="profileContent">
