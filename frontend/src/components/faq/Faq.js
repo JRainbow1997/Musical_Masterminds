@@ -17,7 +17,7 @@ const Faq = () => {
               What is this site?
               </label>
             <div className="panel-content">
-              <p>A Musical Theatre Quiz website which lets you test your knowledge on a vairety of musical based questions</p>
+              <p>This is a MERN (MongoDB, Express, React and Node) stack website created by Joe Bentley, Joshua Rainbow and Madeline Harrop as a project for Code Nation. The site allows you to create a profile and take musical theatre-based quizzes with different difficulties. You can also view the leader boards which display users who have the latest top 10 scores per difficulty.  </p>
             </div>
           </div>
         </div>
@@ -46,7 +46,7 @@ const Faq = () => {
               How many questions are there?
             </label>
             <div className="panel-content">
-              <p>You can set the amount of questions you answer. The default is 10.</p>
+              <p>You can set the amount of questions you answer. The default is 5.</p>
             </div>
           </div>
         </div>
@@ -58,7 +58,7 @@ const Faq = () => {
               How does the leaderboard work?
             </label>
             <div className="panel-content">
-              <p>The leaderboard displays the user with the most correct answers, the difficulty they set and what date they took the quiz.</p>
+              <p>The leaderboard displays the user with the most correct answers and what date they took the quiz. You can view top 10 over all or top 10 in each difficulty.</p>
             </div>
           </div>
         </div>

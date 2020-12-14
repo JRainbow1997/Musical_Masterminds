@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import IdleTimerContainer from "../IdleTimerComponent/IdleTimerComponent";
+import NotSignedIn from "../notSignedIn/NotSignedIn";
 import "./Profile.css";
 
 function Profile() {
@@ -13,13 +14,14 @@ function Profile() {
     })
     return (
         <div className="profileWrapper">
-            <IdleTimerContainer />
-            {(!sessionStorage.getItem('signedIn')) ? 
-                <div><h1 className="title">You are not signed in</h1></div> :
+            {(!sessionStorage.getItem('signedIn')) ? <div><NotSignedIn /></div> :
                 <div>
-                    <h2>{sessionStorage.getItem("username")}</h2>
-                    <input type="password" placeholder="Reset Password"></input>
-                </div>  
+                    <IdleTimerContainer />
+                    <div>
+                        <h2>{sessionStorage.getItem("username")}</h2>
+                        <input type="password" placeholder="Reset Password"></input>
+                    </div>
+                </div>
             }
         </div>
     );

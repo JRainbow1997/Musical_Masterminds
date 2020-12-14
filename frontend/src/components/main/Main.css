@@ -6,6 +6,7 @@
 }
 
 .mainContent {
+  color: black;
   background-color: lightgray;
   opacity: 0.9;
   width: 50%;
@@ -13,7 +14,6 @@
   left: 25%;
   height: 90vh;
   box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
-  
 }
 
 .welcome {
