@@ -15,10 +15,25 @@
   padding-bottom: 1%;
   box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
 }
+
 .faq-header {
-  font-size: 280%;
   padding: 2%;
-  color: #7caffa;
+  color: #7CAFFA; 
+  font: bold 52px Helvetica, Arial, Sans-Serif;
+  text-shadow: 1px 1px white, 
+               2px 2px white, 
+               3px 3px white;
+}
+.faq-header:hover {
+  position: relative; 
+  top: -3px; 
+  left: -3px; 
+  text-shadow: 1px 1px white, 
+               2px 2px white, 
+               3px 3px white, 
+               4px 4px white, 
+               5px 5px white, 
+               6px 6px white;
 }
 
 .faq-content {

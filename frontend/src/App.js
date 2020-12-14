@@ -11,7 +11,9 @@ import Quiz from "./components/quiz/Quiz";
 import Signin from "./components/signin/Signin";
 import Signup from "./components/signup/Signup";
 import Signout from "./components/signout/Signout";
+import NotSignedIn from "./components/notSignedIn/NotSignedIn";
 import "./App.css";
+
 
 function App() {
 
@@ -35,6 +37,7 @@ function App() {
               <Route exact path="/" component={Signin} />
               <Route exact path="/Signup" component={Signup} />
               <Route path="/signout" component={Signout} />
+              <Route path="/notsignedin" component={NotSignedIn} />
               <Route path="/404" component={PageNotFound} />
               <Redirect to="404" />
             </Switch>
