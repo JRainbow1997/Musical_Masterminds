@@ -9,6 +9,7 @@ function Profile() {
 
     const [password, setPassword] = useState("");
     const [passwordCheck, setPasswordCheck] = useState("");
+    const [passwordToggled, setPasswordToggled] = useState(false);
 
     const onSubmit = (event) => {
         event.preventDefault()
@@ -33,22 +34,39 @@ function Profile() {
         }
     };
 
+    const toggle = () => {
+        setPasswordToggled(!passwordToggled)
+    }
+
 
     return (
         <div className="profileWrapper">
-            <IdleTimerContainer />
+            
             {(!sessionStorage.getItem('signedIn')) ? 
                 <div><h1 className="title">You are not signed in</h1></div> :
-                <div className="password-reset">
-                    <form onSubmit={onSubmit}>
-                        <h2>{sessionStorage.getItem("username")}</h2>
-                        <label htmlFor="password">New password</label>
-                        <input id="password" name="password" type="password" value={password} placeholder="Reset Password" onChange={onChangeHandler}></input>
-                        <br />
-                        <label htmlFor="passwordCheck">Confirm password</label>
-                        <input id="passwordCheck" name="passwordCheck" value={passwordCheck} type="password" placeholder="Confirm Password" onChange={onChangeHandler}></input>
-                        <input value="submit" type="submit"></input>
-                    </form>
+                <div className="profileContent">
+                    <IdleTimerContainer />
+                    <div className="password-reset">
+                    <div className="profile-panel">
+                        <h3>Your username: {sessionStorage.getItem("username")}</h3>
+                        <h4>Your email: {sessionStorage.getItem("email")}</h4>
+                        <p>Date of Birth:</p>
+                        <p>Favourite Musical:</p>
+                    </div>
+                    <a href="#" onClick={toggle}>Reset password</a>
+                    {(passwordToggled) ? 
+                    <div id="show_hide">                    
+                        <form className="reset" onSubmit={onSubmit}>
+                            <label htmlFor="password">New password</label>
+                            <input id="password" name="password" type="password" value={password} placeholder="Reset Password" onChange={onChangeHandler}></input>
+                            <br />
+                            <label htmlFor="passwordCheck">Confirm password</label>
+                            <input id="passwordCheck" name="passwordCheck" value={passwordCheck} type="password" placeholder="Confirm Password" onChange={onChangeHandler}></input>
+                            <input value="submit" type="submit"></input>
+                        </form>
+                    </div> : ""
+                    }
+                    </div>
                 </div>  
             }
         </div>
