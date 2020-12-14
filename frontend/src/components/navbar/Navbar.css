@@ -8,21 +8,20 @@ nav {
     padding-bottom: 1%;
     width: 100%;
     background-color: rgb(0, 62, 121);
-    min-height: 10vh;
+    min-height: 10%;
 }
 nav ul{
     display: flex;
     justify-content: space-between;
     margin: 0;
     font-size: calc(10px + 2vmin);
-    padding-top: 2.5%;
 }
 nav ul li{
     padding-left: 30px;
     list-style: none;
 }
 .div-links{
-    padding-top: 0.8%;
+    padding-top: 0.5%;
 }
 .div-links,.div-LinksSignedIn{
     margin-right: 10%;

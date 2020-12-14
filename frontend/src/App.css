@@ -1,0 +1,5 @@
+.AppBody {
+    background-image: url("./components/main/images/mt_background.jpg");
+    background-size: cover;
+    min-height: 90vh;
+  }

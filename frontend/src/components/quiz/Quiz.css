@@ -1,34 +1,113 @@
-.curtain {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-  }
-  
-  .left-panel,.right-panel {
-    width: 50%;
-    height: 100vh;
-    float: left;
-    z-index: 2;
-    position: relative;
-    background: turquoise;
-    transition: all 1s ease-in;
-  }
-  
-  .content {
-    position: absolute;
-    width: 100%;
-    top: 50%;
-    transform: translateY(-50%);
-    background: 333;
-    z-index: 1;
-    text-align: center;
-  }
-  .curtain:hover > .left-panel{
-      transform: translateX(-100%);
-  }
-  .curtain:hover > .right-panel{
-      transform: translateX(100%);
-  }
+.quizWrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.quizForm{
+  position: fixed;
+  margin: 10px auto;
+  width: 20%;
+  height: 40%;
+  display: flex;
+  justify-content: space-between;
+  align-content: space-around;
+  flex-direction: column;
+  font-size: 1.5em;
+  background-size: 400% 400%;
+  border-style: solid;
+  border-radius: 1em;
+  border-color: rgb(0, 62, 121);
+  padding: 1%;
+  margin-left: 10%;
+  margin-top: 5%;
+}
+.quizForm label{
+  margin: 0;
+}
+.quizForm > input, .quizForm > select{
+  width: 200px;
+}
+.quizForm > input{
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  opacity: 1;
+  z-index: 2;
+  line-height: 30px;
+  padding: 17px;
+  border-radius: 17px;
+  font-family: Georgia, serif;
+  font-weight: normal;
+  text-align: center;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  background-image: linear-gradient(
+    to right,
+    rgb(28, 110, 164) 0%,
+    rgb(35, 136, 203) 50%,
+    rgb(20, 78, 117) 100%
+  );
+  box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+  border: 2px solid rgb(28, 110, 164);
+}
+.photoAndQuote{
+  position: absolute;
+  right: 150px;
+  margin-top: 5%;
+  margin-right: 10%;
+  z-index: 10;
+}
 .portrait{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 281px;
+  height: 281px;
+  opacity: 1;
+  padding-bottom: 2%;
+}
+#quote{
+  text-align: center;
+  white-space: pre-wrap;
+}
+.quizWrapper {
+  background-color: lightgray;
+  opacity: 0.9;
+  height: 90vh;
+  width: 80%;
+  margin-left: 10%;
+  box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+}
+.final{
   visibility: hidden;
+}
+.curtain {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.left-panel,.right-panel {
+  width: 50%;
+  height: 100vh;
+  float: left;
+  z-index: 2;
+  position: relative;
+  background: turquoise;
+  transition: all 1s ease-in;
+}
+.content {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: 333;
+  z-index: 1;
+  text-align: center;
+}
+.curtain:hover > .left-panel{
+    transform: translateX(-100%);
+}
+.curtain:hover > .right-panel{
+    transform: translateX(100%);
 }

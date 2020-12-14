@@ -6,7 +6,7 @@ import "./Quiz.css";
 
 const Quiz = () => {
     return (
-        <div class="quizWrapper">
+        <div class="quiz-wrapper">
             <BrowserRouter>
                 <Switch>
                     <Route exact path="/Quiz" component={LoadQuestions} />

@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState, } from "react";
 import { useHistory } from "react-router-dom";
 import Oklahoma from "./images/Oklahoma.jpg";
-import Wicked from "./images/Wicked.jpg";
+import Wicked from "./images/Wicked.png";
 import Hercules from "./images/Hercules.jpg";
 import "./Quiz.css";
 
@@ -51,13 +51,13 @@ const LoadQuestions = () => {
             document.getElementById("portrait").style.visibility = "visible"
             if ((event.target.value) === "easy"){
                 document.getElementById("portrait").src = Oklahoma;
-                document.getElementById("quote").innerHTML = "\'I\'ve got a wonderful feeling, everything's going my way!\' ~ Richard Rodgers"
+                document.getElementById("quote").innerHTML = "\"I\'ve got a wonderful feeling,\n everything's going my way!\" ~ Richard Rodgers"
             }else if ((event.target.value) === "medium"){
                 document.getElementById("portrait").src = Wicked;
-                document.getElementById("quote").innerHTML = "\'It\'s time to trust my instincts close my eyes and LEAP\' ~ Stephen Schwartz"
+                document.getElementById("quote").innerHTML = "\"It\'s time to trust my instincts\n close my eyes and LEAP\" ~ Stephen Schwartz"
             }else if ((event.target.value) === "hard"){
                 document.getElementById("portrait").src = Hercules;
-                document.getElementById("quote").innerHTML = "\'I will beat the odds, I can go the distance, I will face the world fearless, proud & strong!\' ~ Alan Menken"
+                document.getElementById("quote").innerHTML = "\"I will beat the odds, I can go the distance, I will face\n the world fearless, proud & strong!\" ~ Alan Menken"
             }
         } else if (event.target.id === "amount") {
             setAmount(event.target.value)
@@ -66,13 +66,14 @@ const LoadQuestions = () => {
 
     return (
         <div class="quizWrapper">
-            <p>Select difficulity</p>
-            <form onSubmit={submitForm}>
+            <form className="quizForm" onSubmit={submitForm}>
+                <label name="difficulties">Select Difficulity</label>
                 <select name="difficulties" id="difficulty" onChange={onChangeHandler} value={difficulty}>
                     <option value="easy">Easy</option>
                     <option value="medium">Medium</option>
                     <option value="hard">Hard</option>
                 </select>
+                <label name="amount">Select Number of Questions</label>
                 <select name="amount" id="amount" onChange={onChangeHandler} value={amount}>
                     <option value="5">5</option>
                     <option value="10">10</option>
@@ -80,9 +81,9 @@ const LoadQuestions = () => {
                 </select>
                 <input type="submit" value="submit"></input>
             </form>
-            <div>
-                <img id="portrait" className="portrait" alt="logo" />
-                <h3 id = "quote"></h3>
+            <div className="photoAndQuote">
+                <img id="portrait" src={Oklahoma} className="portrait" alt="logo" />
+                <h3 id = "quote">"I've got a wonderful feeling,<br/> everything's going my way!" ~ Richard Rodgers"</h3>
             </div>
         </div>
     );

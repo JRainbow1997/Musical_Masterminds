@@ -1,11 +1,10 @@
 import React from "react";
-import "./Quiz.css";
+import { Link } from "react-router-dom";
 import IdleTimerContainer from "../IdleTimerComponent/IdleTimerComponent";
+import "./Quiz.css";
 
 const Questions = () => {
-
     document.title = "Quiz | Musical Masterminds";
-
     let textInput = React.createRef();
     let questions = JSON.parse(sessionStorage.getItem("Questions"));
     let type = JSON.parse(sessionStorage.getItem("Type"));
@@ -16,6 +15,11 @@ const Questions = () => {
     let finalScore = 0;
     let choice = '';
     let correctAnswer = '';
+
+    const calculateFinalScore = () => {
+        document.getElementById("displayScore").innerHTML = `You scored ${finalScore}/${questionNum}!`
+        document.getElementById("final").style.visibility = "visible"
+    }
 
     const shuffleAnswers = () => {
         console.log(questions);
@@ -56,7 +60,9 @@ const Questions = () => {
                 document.getElementById("answer3").style.visibility = "hidden"
                 document.getElementById("answer4").style.visibility = "hidden"
             }
-        } else { alert(`Gameover! you got ${finalScore} right`) }
+        } else {
+            calculateFinalScore();    
+        }
     };
 
     const chooseAnswer = (event) => {
@@ -74,7 +80,7 @@ const Questions = () => {
             } else {
                 console.log("INCORRECT")
             }
-            shuffleAnswers()
+            shuffleAnswers();
         }
     }
     // const leftInspire = ["Good ", "Keep ", "Almost ", "You Are "]
@@ -112,6 +118,13 @@ const Questions = () => {
                 </div>
                 <div>
                     <button type="submit" onClick={submit}>Lock in!</button>
+                </div>
+                <div id="final" className="final">
+                    <p id="displayScore">You got {finalScore}/{questionNum} correct!</p>
+                    <ul>
+                        <li><Link to="/Quiz">Try Again!</Link></li>
+                        <li><Link to="/leaderboard">See the Leaderboard</Link></li>
+                    </ul>
                 </div>
             </div>
         </div>
