@@ -39,6 +39,7 @@ const LoadQuestions = () => {
                 history.push("/Questions");
             })
             .catch((err) => {
+                console.log(err)
                 alert((err, "No difficulty"))
             })
     }
