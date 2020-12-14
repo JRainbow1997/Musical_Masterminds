@@ -42,7 +42,7 @@ const LoadQuestions = () => {
                 history.push("/Questions");
             })
             .catch((err) => {
-                alert((err, "No difficulty"))
+                alert((err))
             })
     }
     const onChangeHandler = (event) => {

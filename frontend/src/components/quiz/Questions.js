@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import IdleTimerContainer from "../IdleTimerComponent/IdleTimerComponent";
-import "./Quiz.css";
+import "./Questions.css";
 
 const Questions = () => {
     document.title = "Quiz | Musical Masterminds";
@@ -10,6 +10,7 @@ const Questions = () => {
     let type = JSON.parse(sessionStorage.getItem("Type"));
     let answers = JSON.parse(sessionStorage.getItem("Answers"));
     let specificAnswers = [];
+    let answerHistory = [];
     let questionNum = 0;
     let questionAnswers = 0;
     let finalScore = 0;
@@ -19,6 +20,7 @@ const Questions = () => {
     const calculateFinalScore = () => {
         document.getElementById("displayScore").innerHTML = `You scored ${finalScore}/${questionNum}!`
         document.getElementById("final").style.visibility = "visible"
+        document.getElementById("history").style.visibility = "visible"
     }
 
     const shuffleAnswers = () => {
@@ -83,49 +85,32 @@ const Questions = () => {
             shuffleAnswers();
         }
     }
-    // const leftInspire = ["Good ", "Keep ", "Almost ", "You Are "]
-    // const rightInspire = ["Job!", "Going!", "There!", "Amazing!"]
-    // const inspire = Math.floor(Math.random() * leftInspire.length);
-    // const leftQuote = leftInspire[inspire];
-    // const rightQuote = rightInspire[inspire];
 
     return (
-        <div className="curtai">
+        <div className="questions-wrapper">
             <IdleTimerContainer />
-            <div className="left-pane">
-                {/* <h2 className="">{leftQuote}</h2> */}
-
+            <button className="start" onClick={shuffleAnswers}>Start</button>
+            <p id="question">{questions[questionNum - 1]}</p>
+            <div>
+                <button type="button" className="answer" id="answer1" ref={textInput} onClick={chooseAnswer}>1</button>
+                <button type="button" className="answer" id="answer2" ref={textInput} onClick={chooseAnswer}>2</button>
             </div>
-
-            <div className="right-pane">
-                {/* <h2>{rightQuote}</h2> */}
+            <div>
+                <button type="button" className="answer" id="answer3" ref={textInput} onClick={chooseAnswer}>3</button>
+                <button type="button" className="answer" id="answer4" ref={textInput} onClick={chooseAnswer}>4</button>
             </div>
+            <div>
+                <button type="submit" id="lock-in" className="lock-in" onClick={submit}>Lock in!</button>
+            </div>
+            <div id="final" className="final">
+                <p id="displayScore">You got {finalScore}/{questionNum} correct!</p>
+                <div id="history">
 
-            <div className="content">
-                <button onClick={shuffleAnswers}>Start</button>
-                <p id="question">{questions[questionNum - 1]}</p>
-                <div>
-                    <button type="button" id="answer1" ref={textInput} onClick={chooseAnswer}>1</button>
                 </div>
-                <div>
-                    <button type="button" id="answer2" ref={textInput} onClick={chooseAnswer}>2</button>
-                </div>
-                <div>
-                    <button type="button" id="answer3" ref={textInput} onClick={chooseAnswer}>3</button>
-                </div>
-                <div>
-                    <button type="button" id="answer4" ref={textInput} onClick={chooseAnswer}>4</button>
-                </div>
-                <div>
-                    <button type="submit" onClick={submit}>Lock in!</button>
-                </div>
-                <div id="final" className="final">
-                    <p id="displayScore">You got {finalScore}/{questionNum} correct!</p>
-                    <ul>
-                        <li><Link to="/Quiz">Try Again!</Link></li>
-                        <li><Link to="/leaderboard">See the Leaderboard</Link></li>
-                    </ul>
-                </div>
+                <ul>
+                    <li><Link to="/quiz">Try Again!</Link></li>
+                    <li><Link to="/leaderboard">See the Leaderboard</Link></li>
+                </ul>
             </div>
         </div>
     )
