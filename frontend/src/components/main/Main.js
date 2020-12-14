@@ -10,7 +10,7 @@ function Main() {
       {(!sessionStorage.getItem('signedIn')) ? <div><NotSignedIn/></div> :
         <div className="mainContent">
           <div className="welcome">
-            <h1>Welcome</h1>
+            <h1 className="main-title">Welcome</h1>
             <br />
             <a className="user-link" href="/profile"><h2>{sessionStorage.getItem("username")}</h2></a>
             <br />
