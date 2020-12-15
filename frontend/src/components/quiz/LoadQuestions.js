@@ -19,7 +19,7 @@ const LoadQuestions = () => {
         let i = 0;
         event.preventDefault()
         axios
-            .get("api/quiz", { params: { questions: amount, category: 13, difficulty: difficulty } })
+            .get("api/quiz", { params: { questions: amount, category: 1, difficulty: difficulty } })
             .then((res) => {
                 let questions = [];
                 let type = [];
