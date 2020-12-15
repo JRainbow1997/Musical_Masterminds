@@ -95,7 +95,7 @@ const LoadQuestions = () => {
                 <select name="amount" id="amount" onChange={onChangeHandler} value={amount}>
                     {options.map(o => <option key={o.id} value={o.id}>{o.text}</option>)}
                 </select>
-                <input type="submit" value="submit"></input>
+                <input type="submit" value="submit" id="submit"></input>
             </form>
             <div className="photoAndQuote">
                 <img id="portrait" src={Oklahoma} className="portrait" alt="logo" />

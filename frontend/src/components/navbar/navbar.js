@@ -7,8 +7,6 @@ function Navbar(props) {
     const [loggedin, setLoggedin] = useState(sessionStorage.getItem("signedIn"))
 
     useEffect(() => {
-        console.log(sessionStorage.getItem("signedIn"))
-        // setLoggedin(sessionStorage.getItem("signedIn"))
         if (!sessionStorage.getItem("signedIn")) {
             setLoggedin(false)
         } else {

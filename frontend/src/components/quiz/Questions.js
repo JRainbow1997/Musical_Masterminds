@@ -66,7 +66,6 @@ const Questions = () => {
 
     const chooseAnswer = (event) => {
         choice = event.target.innerHTML;
-        console.log(choice);
     }
     
     const submit = () => {

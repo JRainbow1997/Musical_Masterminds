@@ -6,7 +6,6 @@ const bcrypt = require("bcrypt");
 router.get("/", (req, res) => {
     User.find({}, (err, users) => {
         if (err) {
-            // console.log(err);
             res.status(500).json({ status: "Not OK", err });
         } else {
             res.status(200).json({ status: "OK", users });
@@ -55,6 +54,21 @@ router.post("/", async (req, res) => {
         return;
     }
     res.status(401).json({ status: "Not OK", err: "Unauthorised." });
+});
+
+router.post("/updatepassword", async (req, res) => {
+    if (req.body.password !== req.body.passwordCheck) {
+        return res.status(400).json({ status: "Not OK", err: "Passwords Don\"t match" })
+    }
+    User.findByIdAndUpdate(req.body.id, {password: await bcrypt.hash(req.body.password, 10)}, (err, user) => { 
+        if (err) { 
+            res.status(500).json({ status: "Not OK", err });
+        } else if (!user) {
+            res.status(404).json({ status: "Not OK", err: "User doesn't exist." });
+        } else {
+            res.status(200).json({ status: "OK", msg: "Updated Password", user});
+        }
+    });
 });
 
 module.exports = router;

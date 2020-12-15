@@ -1,0 +1,43 @@
+.profileWrapper {
+    background-image: url("../main/images/mt_background.jpg");
+    background-size: cover;
+    height: 100vh;
+    opacity: 0.9;
+}
+
+.profileContent {
+    padding-top: 3%;
+    line-height: 50px;
+}
+
+.profile-panel {
+    box-shadow:  8px 0px 10px 4px #888888;
+    width: 100%;
+    position: relative;
+    padding: 5%;
+}
+
+.password-reset {
+    border: black solid 1px;
+    width: 40%;
+    position: relative;
+    left: 30%;
+    height: 30%;
+    text-align: center;
+    padding: 5%;
+    background-color: lightgrey;
+    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+    opacity: 0.9;
+    font-size: larger;
+}
+
+.reset {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    box-shadow: 8px 5px 10px 3px #888888;
+}
+
+p {
+    line-height: 20px;
+}
+

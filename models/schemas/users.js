@@ -42,8 +42,7 @@ userSchema.statics.checkPassword = async function(email, password) {
         return false;    
     }
     
-    if (await bcrypt.compare(password, user.password)) {
-        
+    if (await bcrypt.compare(password, user.password)) {        
         return true;
     }
         console.log("passwords don't match")

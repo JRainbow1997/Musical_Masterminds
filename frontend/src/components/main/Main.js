@@ -1,30 +1,16 @@
 import React, { useEffect } from "react";
-import { useHistory } from "react-router-dom";
 import IdleTimerContainer from "../IdleTimerComponent/IdleTimerComponent";
 import "./Main.css";
+import NotSignedIn from "../notSignedIn/NotSignedIn"
 
 function Main() {
-  let history = useHistory();
-
-  useEffect(() => {
-    setTimeout(() => {
-      history.push("/signout");
-    }, 3600000); //Signs user out after 60 minutes
-  });
-
-  useEffect(() => {
-    if (!sessionStorage.getItem("signedIn")) {
-      return;
-    }
-  })
-
   return (
     <div className="mainWrapper">
       <IdleTimerContainer />
-      {(!sessionStorage.getItem('signedIn')) ? <div><h1 className="title">You are not signed in</h1></div> :
+      {(!sessionStorage.getItem('signedIn')) ? <div><NotSignedIn/></div> :
         <div className="mainContent">
           <div className="welcome">
-            <h1>Welcome</h1>
+            <h1 className="main-title">Welcome</h1>
             <br />
             <a className="user-link" href="/profile"><h2>{sessionStorage.getItem("username")}</h2></a>
             <br />
