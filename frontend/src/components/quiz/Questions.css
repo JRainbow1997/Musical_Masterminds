@@ -22,9 +22,6 @@
 .answer:focus{
     background-color: green;
 }
-/* .answer:active{
-    width: 10%;
-} */
 .lock-in{
     width: 20%;
 }
