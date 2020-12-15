@@ -23,7 +23,7 @@ const LoadQuestions = () => {
                 let questions = [];
                 let type = [];
                 let answers = [];
-                while (i !== (amount - 1)) {
+                while (i !== (amount)) {
                     questions.push(res.data.results[i].question);
                     type.push(res.data.results[i].type);
                     answers.push(res.data.results[i].correct_answer);
