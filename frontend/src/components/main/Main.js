@@ -20,8 +20,12 @@ function Main() {
             <br />
             <h2>Get Started by hitting the TAKE QUIZ button</h2>
           </div>
-          <a className="quiz-btn" href="/quiz">TAKE QUIZ</a>
-          <a className="ldr-btn" href="/leaderboard">LATEST LEADERS</a>
+          <div className="quiz-btn-div">
+            <a className="quiz-btn" href="/quiz">TAKE QUIZ</a>
+          </div>
+          <div className="ldr-btn-div">
+            <a className="ldr-btn" href="/leaderboard">LATEST LEADERS</a>
+          </div>
         </div>
       }
     </div>

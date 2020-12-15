@@ -8,6 +8,7 @@ import Main from "./components/main/Main";
 import Navbar from "./components/navbar/navbar";
 import Profile from "./components/profile/Profile";
 import Quiz from "./components/quiz/Quiz";
+import Questions from "./components/quiz/Questions";
 import Signin from "./components/signin/Signin";
 import Signup from "./components/signup/Signup";
 import Signout from "./components/signout/Signout";
@@ -34,6 +35,7 @@ function App() {
               <Route exact path="/Main" component={Main} />
               <Route exact path="/Profile" component={Profile} />
               <Route exact path="/Quiz" component={Quiz} />
+              <Route exact path="/Questions" component={Quiz} />
               <Route exact path="/" component={Signin} />
               <Route exact path="/Signup" component={Signup} />
               <Route path="/signout" component={Signout} />

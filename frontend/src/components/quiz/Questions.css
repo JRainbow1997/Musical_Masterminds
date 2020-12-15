@@ -1,0 +1,30 @@
+.questions-wrapper{
+    text-align: center;
+    background-color: rgba(211, 211, 211, 0.9);
+    height: 90vh;
+    width: 80%;
+    margin-left: 10%;
+    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+}
+#question{
+    font-size: calc(10px + 2vmin);
+    color: black;
+}
+.answer{
+    margin: 1%;
+    width: 20%;
+    height: 100px;
+    border-radius: 10px;
+    border-width: 10px;
+    border-color: rgb(0, 62, 121);
+    background-color: #7CAFFA;
+}
+.answer:focus{
+    background-color: green;
+}
+.lock-in{
+    width: 20%;
+}
+.final{
+    visibility: hidden;
+  }

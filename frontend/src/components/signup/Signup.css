@@ -1,7 +1,10 @@
+.signup{
+    padding-top: 20px;
+}
 .signup-form {
-    margin: 10px auto;
+    margin: auto;
     width: 30vw;
-    height: 70vh;
+    height: 700px;
     display: flex;
     justify-content: space-around;
     align-content: space-around;
@@ -10,8 +13,13 @@
     background-size: 400% 400%;
     border-style: solid;
     border-radius: 1em;
-    border-color: rgb(0, 62, 121);
+    border-color: #7CAFFA;
+    background-color: rgb(0, 62, 121);
+    color: #7CAFFA;
     padding: 1%;
+}
+#username, #email, #password, #passwordCheck{
+    color: black;
 }
 .signup-form label{
     text-align: left;
@@ -24,6 +32,7 @@
     border-radius: 0.6em;
     text-indent: 5px;
     width: 100%;
+    color: white;
 }
 .Submit{
     border-radius: 0.5em;

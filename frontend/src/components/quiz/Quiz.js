@@ -7,15 +7,14 @@ import "./Quiz.css";
 
 const Quiz = () => {
     return (
-        <div class="quizWrapper">
-            {(!sessionStorage.getItem('signedIn')) ? <div><NotSignedIn /></div> :
-                <BrowserRouter>
-                    <Switch>
-                        <Route exact path="/Quiz" component={LoadQuestions} />
-                        <Route exact path="/Questions" component={Questions} />
-                    </Switch>
-                </BrowserRouter>
-            }
+        <div class="quiz-wrapper">
+          {(!sessionStorage.getItem('signedIn')) ? <div><NotSignedIn /></div> :
+            <BrowserRouter>
+                <Switch>
+                    <Route exact path="/quiz" component={LoadQuestions} />
+                    <Route exact path="/questions" component={Questions} />
+                </Switch>
+            </BrowserRouter>
         </div>
     );
 };
