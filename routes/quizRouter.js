@@ -2,8 +2,6 @@ const express = require('express');
 const router = express.Router();
 const LeaderBoard = require("../models/schemas/leaderboard");
 
-const getQuiz = require('../lib/getQuiz');
-
 router.get('/', async (req, res) => {
     const quiz = await getQuiz(req.query.questions, req.query.category, req.query.difficulty);
     res.status(200).json(quiz);
