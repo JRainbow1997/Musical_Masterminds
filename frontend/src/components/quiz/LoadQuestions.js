@@ -39,6 +39,7 @@ const LoadQuestions = () => {
                 sessionStorage.setItem("Questions", JSON.stringify(questions));
                 sessionStorage.setItem("Type", JSON.stringify(type));
                 sessionStorage.setItem("Answers", JSON.stringify(answers));
+                sessionStorage.setItem("Difficulty", difficulty);
                 history.push("/Questions");
             })
             .catch((err) => {

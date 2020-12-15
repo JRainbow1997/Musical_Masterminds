@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import IdleTimerContainer from "../IdleTimerComponent/IdleTimerComponent";
 import "./Questions.css";
 
@@ -18,10 +19,20 @@ const Questions = () => {
     let answerHistory = [];
 
     const calculateFinalScore = () => {
-        document.getElementById("displayScore").innerHTML = `You scored ${finalScore}/${questionNum}!`
-        document.getElementById("final").style.visibility = "visible";
-
+        axios.post('api/quiz', {
+            userId: sessionStorage.getItem("userId"),
+            score: finalScore,
+            difficulty: sessionStorage.getItem("Difficulty")
+        }).then((res) => {
+            if (res.data.status === 'OK') {
+                document.getElementById("displayScore").innerHTML = `You scored ${finalScore}/${questionNum}!`
+                document.getElementById("final").style.visibility = "visible";
+            }
+        }).catch((err) => {
+            alert(err, "Unable to send data to leaderboard")
+        })
     }
+
     const shuffleAnswers = () => {
         if (questionAnswers < answers.length) {
             choice = '';
@@ -85,34 +96,38 @@ const Questions = () => {
     }
 
     return (
-        <div className="questions-wrapper">
-            <IdleTimerContainer />
+        <div data-animation="curtain">
             <button className="start" onClick={shuffleAnswers}>Start</button>
-            <p id="question">{questions[questionNum - 1]}</p>
-            <div>
-                <button type="button" className="answer" id="answer1" ref={textInput} onClick={chooseAnswer}>1</button>
-                <button type="button" className="answer" id="answer2" ref={textInput} onClick={chooseAnswer}>2</button>
-            </div>
-            <div>
-                <button type="button" className="answer" id="answer3" ref={textInput} onClick={chooseAnswer}>3</button>
-                <button type="button" className="answer" id="answer4" ref={textInput} onClick={chooseAnswer}>4</button>
-            </div>
-            <div>
-                <button type="submit" id="lock-in" className="lock-in" onClick={submit}>Lock in!</button>
-            </div>
-            <div id="final" className="final">
-                <p id="displayScore">You got {finalScore}/{questionNum} correct!</p>
-                <div id="history">
-                    <ul>
-                        <li>{questions[0]}</li>
-                        <li>{answerHistory[0]}</li>
-                    </ul>
+            <div></div>
+                <div className="questions-wrapper">
+                    <IdleTimerContainer />
+                    <p id="question">{questions[questionNum - 1]}</p>
+                    <div>
+                        <button type="button" className="answer" id="answer1" ref={textInput} onClick={chooseAnswer}>1</button>
+                        <button type="button" className="answer" id="answer2" ref={textInput} onClick={chooseAnswer}>2</button>
+                    </div>
+                    <div>
+                        <button type="button" className="answer" id="answer3" ref={textInput} onClick={chooseAnswer}>3</button>
+                        <button type="button" className="answer" id="answer4" ref={textInput} onClick={chooseAnswer}>4</button>
+                    </div>
+                    <div>
+                        <button type="submit" id="lock-in" className="lock-in" onClick={submit}>Lock in!</button>
+                    </div>
+                    <div id="final" className="final">
+                        <p id="displayScore">You got {finalScore}/{questionNum} correct!</p>
+                        <div id="history">
+                            <ul>
+                                <li>{questions[0]}</li>
+                                <li>{answerHistory[0]}</li>
+                            </ul>
+                        </div>
+                        <ul>
+                            <li><Link to="/quiz">Try Again!</Link></li>
+                            <li><Link to="/leaderboard">See the Leaderboard</Link></li>
+                        </ul>
+                    </div>
                 </div>
-                <ul>
-                    <li><Link to="/quiz">Try Again!</Link></li>
-                    <li><Link to="/leaderboard">See the Leaderboard</Link></li>
-                </ul>
-            </div>
+            <div></div>
         </div>
     )
 }
