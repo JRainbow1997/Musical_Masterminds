@@ -20,7 +20,6 @@ const LoadQuestions = () => {
         axios
             .get(`https://opentdb.com/api.php?amount=${amount}&category=13&difficulty=${difficulty}`)
             .then((res) => {
-                console.log(res.data)
                 let questions = [];
                 let type = [];
                 let answers = [];
