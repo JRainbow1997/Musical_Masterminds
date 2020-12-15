@@ -6,7 +6,6 @@ const getQuiz = require('../lib/getQuiz');
 
 router.get('/', async (req, res) => {
     const quiz = await getQuiz(req.query.questions, req.query.category, req.query.difficulty);
-    console.log(quiz)
     res.status(200).json(quiz);
 });
 

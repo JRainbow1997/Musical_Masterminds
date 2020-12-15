@@ -5,7 +5,6 @@ import Oklahoma from "./images/Oklahoma.jpg";
 import Wicked from "./images/Wicked.png";
 import Hercules from "./images/Hercules.jpg";
 import "./Quiz.css";
-import { text } from "body-parser";
 
 const LoadQuestions = () => {
 
@@ -13,18 +12,19 @@ const LoadQuestions = () => {
 
     let history = useHistory();
     const [difficulty, setDifficulty] = useState("easy");
-    const [amount, setAmount] = useState("4");
+    const [amount, setAmount] = useState(4);
 
     const submitForm = (event) => {
         let i = 0;
         event.preventDefault()
         axios
-            .get("api/quiz", { params: { questions: amount, category: 1, difficulty: difficulty } })
+            .get(`https://opentdb.com/api.php?amount=${amount}&category=13&difficulty=${difficulty}`)
             .then((res) => {
+                console.log(res.data)
                 let questions = [];
                 let type = [];
                 let answers = [];
-                while (i != amount) {
+                while (i !== (amount - 1)) {
                     questions.push(res.data.results[i].question);
                     type.push(res.data.results[i].type);
                     answers.push(res.data.results[i].correct_answer);
@@ -52,10 +52,10 @@ const LoadQuestions = () => {
             document.getElementById("portrait").style.visibility = "visible"
             if ((event.target.value) === "easy"){
                 document.getElementById("portrait").src = Oklahoma;
-                document.getElementById("quote").innerHTML = "\"I\'ve got a wonderful feeling,\n everything's going my way!\" ~ Richard Rodgers";
+                document.getElementById("quote").innerHTML = "\"I've got a wonderful feeling,\n everything's going my way!\" ~ Richard Rodgers";
             }else if ((event.target.value) === "medium"){
                 document.getElementById("portrait").src = Wicked;
-                document.getElementById("quote").innerHTML = "\"It\'s time to trust my instincts\n close my eyes and LEAP\" ~ Stephen Schwartz";
+                document.getElementById("quote").innerHTML = "\"It's time to trust my instincts\n close my eyes and LEAP\" ~ Stephen Schwartz";
             }else if ((event.target.value) === "hard"){
                 document.getElementById("portrait").src = Hercules;
                 document.getElementById("quote").innerHTML = "\"I will beat the odds, I can go the distance, I will face\n the world fearless, proud & strong!\" ~ Alan Menken";
