@@ -15,6 +15,7 @@ const Quiz = () => {
                     <Route exact path="/questions" component={Questions} />
                 </Switch>
             </BrowserRouter>
+          };
         </div>
     );
 };
