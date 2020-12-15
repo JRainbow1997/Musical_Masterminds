@@ -23,7 +23,10 @@ const LoadQuestions = () => {
                 let questions = [];
                 let type = [];
                 let answers = [];
-                while (i !== (amount - 1)) {
+                console.log(res.data);
+                while (i != amount) {
+                    console.log(i);
+                    console.log(res.data.results[i].question);
                     questions.push(res.data.results[i].question);
                     type.push(res.data.results[i].type);
                     answers.push(res.data.results[i].correct_answer);
@@ -36,6 +39,7 @@ const LoadQuestions = () => {
                     }
                     i += 1;
                 }
+                console.log(questions);
                 sessionStorage.setItem("Questions", JSON.stringify(questions));
                 sessionStorage.setItem("Type", JSON.stringify(type));
                 sessionStorage.setItem("Answers", JSON.stringify(answers));
@@ -66,19 +70,19 @@ const LoadQuestions = () => {
     }
     const lookup = {
         "easy":[
-            {id: '4', text: 'Half of the Questions (4)'},
-            {id: '6', text: 'Most of the Questions (6)'},
-            {id: '8', text: 'All of the Questions (8)'},
+            {id: 4, text: 'Half of the Questions (4)'},
+            {id: 6, text: 'Most of the Questions (6)'},
+            {id: 8, text: 'All of the Questions (8)'},
         ],
         "medium":[
-            {id: '6', text: 'Half of the Questions (6)'},
-            {id: '10', text: 'Most of the Questions (10)'},
-            {id: '13', text: 'All of the Questions (13)'},
+            {id: 6, text: 'Half of the Questions (6)'},
+            {id: 10, text: 'Most of the Questions (10)'},
+            {id: 13, text: 'All of the Questions (13)'},
         ],
         "hard":[
-            {id: '5', text: 'Half of the Questions (5)'},
-            {id: '8', text: 'Most of the Questions (8)'},
-            {id: '10', text: 'All of the Questions (10)'},
+            {id: 5, text: 'Half of the Questions (5)'},
+            {id: 8, text: 'Most of the Questions (8)'},
+            {id: 10, text: 'All of the Questions (10)'},
         ]
     }
     const options = lookup[difficulty];
