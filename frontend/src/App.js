@@ -14,6 +14,7 @@ import Signup from "./components/signup/Signup";
 import Signout from "./components/signout/Signout";
 import NotSignedIn from "./components/notSignedIn/NotSignedIn";
 import "./App.css";
+import Footer from "./components/footer/Footer";
 
 
 function App() {
@@ -44,6 +45,9 @@ function App() {
               <Redirect to="404" />
             </Switch>
           </body>
+          <footer>
+            <Footer />
+          </footer>
         </div>
       </BrowserRouter>
     </React.Fragment>
