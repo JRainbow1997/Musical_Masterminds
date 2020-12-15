@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import IdleTimerContainer from "../IdleTimerComponent/IdleTimerComponent";
 import "./Questions.css";
 
@@ -18,10 +19,20 @@ const Questions = () => {
     let answerHistory = [];
 
     const calculateFinalScore = () => {
-        document.getElementById("displayScore").innerHTML = `You scored ${finalScore}/${questionNum}!`
-        document.getElementById("final").style.visibility = "visible";
-
+        axios.post('api/quiz', {
+            userId: sessionStorage.getItem("userId"),
+            score: finalScore,
+            difficulty: sessionStorage.getItem("Difficulty")
+        }).then((res) => {
+            if (res.data.status === 'OK') {
+                document.getElementById("displayScore").innerHTML = `You scored ${finalScore}/${questionNum}!`
+                document.getElementById("final").style.visibility = "visible";
+            }
+        }).catch((err) => {
+            alert(err, "Unable to send data to leaderboard")
+        })
     }
+
     const shuffleAnswers = () => {
         if (questionAnswers < answers.length) {
             choice = '';

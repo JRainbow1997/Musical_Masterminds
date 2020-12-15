@@ -23,7 +23,7 @@ const LoadQuestions = () => {
                 let questions = [];
                 let type = [];
                 let answers = [];
-                while (i !== (amount)) {
+                while (i !== (amount - 1)) {
                     questions.push(res.data.results[i].question);
                     type.push(res.data.results[i].type);
                     answers.push(res.data.results[i].correct_answer);
@@ -39,6 +39,7 @@ const LoadQuestions = () => {
                 sessionStorage.setItem("Questions", JSON.stringify(questions));
                 sessionStorage.setItem("Type", JSON.stringify(type));
                 sessionStorage.setItem("Answers", JSON.stringify(answers));
+                sessionStorage.setItem("Difficulty", difficulty);
                 history.push("/Questions");
             })
             .catch((err) => {
