@@ -1,20 +1,13 @@
-.notSignedIn-background {
-    background-image: url("../main/images/mt_background.jpg");
-    background-size: cover;
-    height: 100vh;
-    opacity: 0.9;
-}
-
-
 .notSI-Content {
-    padding-top: 15%;
+    margin-top: 3%;
+    padding-top: 5%;
     color: black;
     text-align: center;
-    background-color: lightgray;
-    opacity: 0.9;
+    background-color: rgba(211, 211, 211, 0.9);
     width: 50%;
     position: absolute;
     left: 25%;
-    height: 90vh;
+    height: 60%;
     box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
 }
+

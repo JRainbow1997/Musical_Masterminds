@@ -7,7 +7,7 @@
     box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
 }
 #question{
-    margin-top: 5%;
+    padding-top: 2%;
     font-size: calc(10px + 2vmin);
     color: black;
 }
@@ -40,9 +40,9 @@
 }
 :root {
     --transform-value: -100%;
-    --animation-delay: 10s;
-	--animation-duration: 2s;
-	--animation-ease: ease-in;
+    --animation-delay: 2.5s;
+	  --animation-duration: 2s;
+	  --animation-ease: ease-in;
 }
 @keyframes initialAnimation-horizontal {
     from {

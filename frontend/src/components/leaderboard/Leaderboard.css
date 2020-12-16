@@ -4,7 +4,7 @@ select:hover {
 #submit:hover{
     cursor: url("../image/greencursor.png"), auto;
 }
-/* .LB-title{
+.LB-title{
     text-decoration: underline;
     font-size: 100px;
     color: rgb(0, 62, 121);
@@ -20,65 +20,24 @@ select:hover {
                0 5px 10px rgba(0,0,0,.25),
                0 10px 10px rgba(0,0,0,.2),
                0 20px 20px rgba(0,0,0,.15);
-} */
-/* .LB-title {
-    text-decoration: underline;
-	display: inline;
-	position: relative;
-	font: 100px Helvetica, Sans-Serif;
-	letter-spacing: -3px;
-	color: rgb(0, 62, 121, 0.5); 
 }
 
-.LB-title:after {
-    text-decoration: underline;
-	content: "Leaderboard";
-	position: absolute; left: 10px; top: 2px;
-	color: rgb(0, 62, 121);   
-} */
-
-.LB-title { 
-    color: rgb(0, 62, 121); 
-    font: bold 52px Helvetica, Arial, Sans-Serif;
-    text-shadow: 1px 1px white, 
-                 2px 2px white, 
-                 3px 3px white;
-}
-.LB-title:hover {
-    position: relative; 
-    top: -3px; 
-    left: -3px; 
-    text-shadow: 1px 1px white, 
-                 2px 2px white, 
-                 3px 3px white, 
-                 4px 4px white, 
-                 5px 5px white, 
-                 6px 6px white;
-}
-
-
-.LB-background {
-    background-image: url("../main/images/mt_background.jpg");
-    background-size: cover;
-    height: 90vh;
-    opacity: 0.9;
-}
 .LB-Content {
     padding-top: 2%;
     color: black;
     text-align: center;
-    background-color: lightgray;
-    /* opacity: 0.9; */
+    background-color: rgba(211, 211, 211, 0.9);
     width: 50%;
     position: relative;
     left: 25%;
     height: 100%;
     box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+    padding-bottom: 2%;
 }
 .LB-table{
-    opacity: 1;
     width: 96%;
     background-color: rgb(53, 53, 53);
+
 }
 .LB-table, th, td{
     color: white;

@@ -38,25 +38,11 @@ function Profile() {
     const toggle = () => {
         setPasswordToggled(!passwordToggled)
     }
+   
 
-    const [fave_musical, setFave_Musical] = useState("")
-    const [dob, setDob] = useState("")
+    const [fave_musical, setFave_Musical] = useState(sessionStorage.getItem("fave_musical"));
+    const [dob, setDob] = useState(sessionStorage.getItem("DOB"));
     const [profileToggled, setProfileToggled] = useState(false);
-
-    // const profileSubmit = (event) => {
-    //     event.preventDefault()
-    //     axios.post("api/users/updateprofile", {
-    //         id: sessionStorage.getItem("userId"),
-    //         fave_musical: fave_musical,
-    //         birth_date: new Date(dob).toDateString()
-    //     }).then((res) => {
-    //         if (res.data.status === "OK") {
-    //             alert("Profile Update")
-    //         }
-    //     }).catch((err) => {
-    //         alert("Error")
-    //     });
-    // };
 
     const musicalSubmit = (event) => {
         event.preventDefault()
@@ -65,6 +51,8 @@ function Profile() {
             fave_musical: fave_musical
         }).then((res) => {
             if (res.data.status === "OK") {
+                sessionStorage.setItem("fave_musical", res.data.fave_musical);
+                setFave_Musical(res.data.fave_musical)
                 alert("Musical Updated")
             }
         }).catch((err) => {
@@ -75,10 +63,12 @@ function Profile() {
         event.preventDefault()
         axios.post("api/users/updatedob", {
             id: sessionStorage.getItem("userId"),
-            birth_date: new Date(dob).toDateString()
+            birth_date: new Date(dob)
         }).then((res) => {
             if (res.data.status === "OK") {
-                alert("Date of Birth Update")
+                sessionStorage.setItem("DOB", res.data.birth_date);
+                setDob(res.data.birth_date);
+                alert("Date of Birth Updated")
             }
         }).catch((err) => {
             alert("Error")
@@ -105,10 +95,12 @@ function Profile() {
                     <IdleTimerContainer />
                     <div className="profile-forms">
                         <div className="profile-panel">
+                            <h1 className="profile-title">Profile</h1>
                             <h3>Your username: {sessionStorage.getItem("username")}</h3>
                             <h4>Your email: {sessionStorage.getItem("email")}</h4>
-                            <p>Date of Birth: {sessionStorage.getItem("DOB")}</p>
-                            <p>Favourite Musical: {sessionStorage.getItem("fave_musical")}</p>
+                            <p>Date of Birth: {dob.split("T")[0].replace()}</p>
+                            <p>Favourite Musical: {fave_musical}</p>
+                            <p>Total Points: {sessionStorage.getItem("total_points")}</p>
                         </div>
                         <a href="#" onClick={toggle}>Reset password</a>
                         {(passwordToggled) ?
