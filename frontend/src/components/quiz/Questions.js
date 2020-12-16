@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Results from "./Results";
 import axios from "axios";
 import IdleTimerContainer from "../IdleTimerComponent/IdleTimerComponent";
 import "./Questions.css";
@@ -16,6 +16,7 @@ const Questions = () => {
     let finalScore = 0;
     let choice = '';
     let correctAnswer = '';
+    let gameOver = false;
     let answerHistory = [];
 
     const calculateFinalScore = () => {
@@ -25,15 +26,23 @@ const Questions = () => {
             difficulty: sessionStorage.getItem("Difficulty")
         }).then((res) => {
             if (res.data.status === 'OK') {
-                document.getElementById("displayScore").innerHTML = `You scored ${finalScore}/${questionNum}!`
-                document.getElementById("final").style.visibility = "visible";
+                alert('quizend');
+                gameOver = true;
             }
         }).catch((err) => {
             alert(err, "Unable to send data to leaderboard")
         })
     }
 
-    const shuffleAnswers = () => {
+    const curtains = () => {
+        document.getElementById("start").style.visibility = "hidden"
+    }
+
+    const shuffleAnswers = (event) => {
+        event.preventDefault();
+        if (event.target.id="start"){
+            curtains();
+        }
         if (questionAnswers < answers.length) {
             choice = '';
             specificAnswers = [];
@@ -97,10 +106,9 @@ const Questions = () => {
 
     return (
         <div data-animation="curtain">
-            <button className="start" onClick={shuffleAnswers}>Start</button>
             <div></div>
-                <div className="questions-wrapper">
-                    <IdleTimerContainer />
+            <IdleTimerContainer />
+                {(!gameOver) ? <div className="questions-wrapper">
                     <p id="question">{questions[questionNum - 1]}</p>
                     <div>
                         <button type="button" className="answer" id="answer1" ref={textInput} onClick={chooseAnswer}>1</button>
@@ -110,24 +118,14 @@ const Questions = () => {
                         <button type="button" className="answer" id="answer3" ref={textInput} onClick={chooseAnswer}>3</button>
                         <button type="button" className="answer" id="answer4" ref={textInput} onClick={chooseAnswer}>4</button>
                     </div>
-                    <div>
-                        <button type="submit" id="lock-in" className="lock-in" onClick={submit}>Lock in!</button>
-                    </div>
-                    <div id="final" className="final">
-                        <p id="displayScore">You got {finalScore}/{questionNum} correct!</p>
-                        <div id="history">
-                            <ul>
-                                <li>{questions[0]}</li>
-                                <li>{answerHistory[0]}</li>
-                            </ul>
-                        </div>
-                        <ul>
-                            <li><Link to="/quiz">Try Again!</Link></li>
-                            <li><Link to="/leaderboard">See the Leaderboard</Link></li>
-                        </ul>
-                    </div>
+                    <button type="submit" id="lock-in" className="lock-in" onClick={submit}>Lock in!</button>
                 </div>
-            <div></div>
+                :
+                <div id="final" className="final">
+                    <p id="displayScore">You got {finalScore}/{questionNum} correct!</p>
+                    <Results />
+                </div>}
+            <div><button className="start" id="start" onClick={shuffleAnswers}>Start</button></div>
         </div>
     )
 }
