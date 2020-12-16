@@ -1,9 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import IdleTimerContainer from "../IdleTimerComponent/IdleTimerComponent";
 import "./Main.css";
 import NotSignedIn from "../notSignedIn/NotSignedIn"
 
 function Main() {
+
+  if (window.location.href.substr(-2) !== '?r') {
+    window.location = window.location.href + '?r';
+  }
+
   return (
     <div className="mainWrapper">
       <IdleTimerContainer />
