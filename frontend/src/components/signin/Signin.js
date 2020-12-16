@@ -25,6 +25,8 @@ const Signin = () => {
                 sessionStorage.setItem('email', res.data.emailAddress);
                 sessionStorage.setItem('username', res.data.username);
                 sessionStorage.setItem('userId', res.data.userId);
+                sessionStorage.setItem("fave_musical", res.data.fave_musical);
+                sessionStorage.setItem("DOB", res.data.birth_date);
                 history.push('/main');
             }
         }).catch((err) => {

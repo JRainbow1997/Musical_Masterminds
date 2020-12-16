@@ -39,6 +39,59 @@ function Profile() {
         setPasswordToggled(!passwordToggled)
     }
 
+    const [fave_musical, setFave_Musical] = useState("")
+    const [dob, setDob] = useState("")
+
+    // const profileSubmit = (event) => {
+    //     event.preventDefault()
+    //     axios.post("api/users/updateprofile", {
+    //         id: sessionStorage.getItem("userId"),
+    //         fave_musical: fave_musical,
+    //         birth_date: new Date(dob).toDateString()
+    //     }).then((res) => {
+    //         if (res.data.status === "OK") {
+    //             alert("Profile Update")
+    //         }
+    //     }).catch((err) => {
+    //         alert("Error")
+    //     });
+    // };
+
+    const musicalSubmit = (event) => {
+        event.preventDefault()
+        axios.post("api/users/updatemusical", {
+            id: sessionStorage.getItem("userId"),
+            fave_musical: fave_musical
+        }).then((res) => {
+            if (res.data.status === "OK") {
+                alert("Musical Updated")
+            }
+        }).catch((err) => {
+            alert("Error")
+        });
+    };
+    const dobSubmit = (event) => {
+        event.preventDefault()
+        axios.post("api/users/updatedob", {
+            id: sessionStorage.getItem("userId"),
+            birth_date: new Date(dob).toDateString()
+        }).then((res) => {
+            if (res.data.status === "OK") {
+                alert("Date of Birth Update")
+            }
+        }).catch((err) => {
+            alert("Error")
+        });
+    };
+
+    const musicalHandler = (event) => {
+        event.preventDefault()
+        setFave_Musical(event.target.value);
+    }
+    const dobHandler = (event) => {
+        event.preventDefault()
+        setDob(event.target.value)
+    }
 
     return (
         <div className="profileWrapper">
@@ -50,8 +103,8 @@ function Profile() {
                         <div className="profile-panel">
                             <h3>Your username: {sessionStorage.getItem("username")}</h3>
                             <h4>Your email: {sessionStorage.getItem("email")}</h4>
-                            <p>Date of Birth:</p>
-                            <p>Favourite Musical:</p>
+                            <p>Date of Birth: {sessionStorage.getItem("DOB")}</p>
+                            <p>Favourite Musical: {sessionStorage.getItem("fave_musical")}</p>
                         </div>
                         <a href="#" onClick={toggle}>Reset password</a>
                         {(passwordToggled) ?
@@ -68,19 +121,21 @@ function Profile() {
                         }
                     </div>
                     <div className="musical-form">
-                        <form>
+                        <form onSubmit={musicalSubmit}>
                             <label htmlFor="fav_musical">Enter Your favourite musical</label>
-                            <input type="text" placeholder="Enter Your favourite musical"></input>
-                            <input type="subtmit" value="submit"></input>
+                            <input id="fave_musical" type="text" placeholder="Enter Your favourite musical" onChange={musicalHandler} value={fave_musical}></input>
+                            <input type="submit" value="submit"></input>
                         </form>
+                    
                     </div>
-                    <div>
-                        <form>
+                    <div className="dob-form">
+                        <br></br>
+                        <form onSubmit={dobSubmit}>
                             <label htmlFor="DOB">Enter Your Date of Birth</label>
-                            <input type="text" placeholder="Enter Your Date of Birth"></input>
-                            <input type="subtmit" value="submit"></input>
+                            <input type="date" placeholder="Enter Your Date of Birth" onChange={dobHandler} value={dob}></input>
+                            <input type="submit" value="submit"></input>
                         </form>
-                    </div>
+                    </div>                    
                 </div>
             }
         </div>
