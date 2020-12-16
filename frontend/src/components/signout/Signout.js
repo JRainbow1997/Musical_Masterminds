@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom"
+import './Signout.css'
 
 const Signout = () => {
 
@@ -17,10 +18,12 @@ const Signout = () => {
     })
 
     return (
-        <div>
-            <div>
+        <div className="signedout-background">
+            <div className="SO-Content">
                 <h1>You have been signed out</h1>
+                <br/>
                 <h2>You will be returned to Sign-in page in 10 seconds</h2>
+                <br />
                 <a href="/"> Return to Sign-in now?</a>
             </div>
         </div>

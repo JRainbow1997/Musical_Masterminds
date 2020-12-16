@@ -1,0 +1,12 @@
+.SO-Content{
+    margin-top: 3%;
+    padding-top: 5%;
+    color: black;
+    text-align: center;
+    background-color: rgba(211, 211, 211, 0.9);
+    width: 50%;
+    position: absolute;
+    left: 25%;
+    height: 30%;
+    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+}
