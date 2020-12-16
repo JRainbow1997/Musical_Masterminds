@@ -8,7 +8,6 @@ import Main from "./components/main/Main";
 import Navbar from "./components/navbar/navbar";
 import Profile from "./components/profile/Profile";
 import Quiz from "./components/quiz/Quiz";
-import Questions from "./components/quiz/Questions";
 import Signin from "./components/signin/Signin";
 import Signup from "./components/signup/Signup";
 import Signout from "./components/signout/Signout";
