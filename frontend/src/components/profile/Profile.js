@@ -41,6 +41,7 @@ function Profile() {
 
     const [fave_musical, setFave_Musical] = useState("")
     const [dob, setDob] = useState("")
+    const [profileToggled, setProfileToggled] = useState(false);
 
     // const profileSubmit = (event) => {
     //     event.preventDefault()
@@ -92,6 +93,9 @@ function Profile() {
         event.preventDefault()
         setDob(event.target.value)
     }
+    const proftoggle = () => {
+        setProfileToggled(!profileToggled)
+    }
 
     return (
         <div className="profileWrapper">
@@ -99,7 +103,7 @@ function Profile() {
                 <div><h1 className="title">You are not signed in</h1></div> :
                 <div className="profileContent">
                     <IdleTimerContainer />
-                    <div className="password-reset">
+                    <div className="profile-forms">
                         <div className="profile-panel">
                             <h3>Your username: {sessionStorage.getItem("username")}</h3>
                             <h4>Your email: {sessionStorage.getItem("email")}</h4>
@@ -119,23 +123,31 @@ function Profile() {
                                 </form>
                             </div> : ""
                         }
-                    </div>
-                    <div className="musical-form">
-                        <form onSubmit={musicalSubmit}>
-                            <label htmlFor="fav_musical">Enter Your favourite musical</label>
-                            <input id="fave_musical" type="text" placeholder="Enter Your favourite musical" onChange={musicalHandler} value={fave_musical}></input>
-                            <input type="submit" value="submit"></input>
-                        </form>
                     
+                    <div>
+                        <a href="#" onClick={proftoggle}>Update Profile</a>
+                        {(profileToggled) ?
+                            <div id="show_hide">
+                                <div className="musical-form">
+                                    <form onSubmit={musicalSubmit} className="reset">
+                                        <label htmlFor="fav_musical">Enter Your favourite musical</label>
+                                        <input id="fave_musical" type="text" placeholder="Enter Your favourite musical" onChange={musicalHandler} value={fave_musical}></input>
+                                        <input type="submit" value="submit"></input>
+                                    </form>
+
+                                </div>
+                                <div className="dob-form">
+                                    <br></br>
+                                    <form onSubmit={dobSubmit} className="reset">
+                                        <label htmlFor="DOB">Enter Your Date of Birth</label>
+                                        <input type="date" placeholder="Enter Your Date of Birth" onChange={dobHandler} value={dob}></input>
+                                        <input type="submit" value="submit"></input>
+                                    </form>
+                                </div>
+                            </div> : ""
+                        }
+                        </div>
                     </div>
-                    <div className="dob-form">
-                        <br></br>
-                        <form onSubmit={dobSubmit}>
-                            <label htmlFor="DOB">Enter Your Date of Birth</label>
-                            <input type="date" placeholder="Enter Your Date of Birth" onChange={dobHandler} value={dob}></input>
-                            <input type="submit" value="submit"></input>
-                        </form>
-                    </div>                    
                 </div>
             }
         </div>
