@@ -18,7 +18,7 @@ const Leaderboard = () => {
         return { "username": item.username, "score": res.score, "difficulty": res.difficulty, "date": new Date(res.date).toDateString() };
       });
     });
-    const result = [].concat.apply([], changedResults).sort((a, b) => { return b.score - a.score }).slice(0, 9);
+    const result = [].concat.apply([], changedResults).sort((a, b) => { return b.score - a.score });
     if (LBFilter !== "all") {
       return (result.filter((result) => { return (result.difficulty === LBFilter) }));
     }
@@ -29,7 +29,7 @@ const Leaderboard = () => {
     axios
       .post("api/leaderboard")
       .then((res) => {
-        setLeaderboard(parseData(res.data.results));
+        setLeaderboard(parseData(res.data.results).slice(0, 9));
       })
       .catch((err) => {
         alert(err, "No Leader");
