@@ -1,20 +1,25 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 .mainContent {
   background-color: rgba(211, 211, 211, 0.9);
   width: 50%;
   position: absolute;
   left: 25%;
-  height: 85vh;
+  height: 90%;
   box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
 }
 
 .welcome {
-    position: relative;
-    padding-top: 8%;
-    text-align: center;
-    opacity: 1;
-    z-index: 3;
-    font-weight: 500;
-    line-height: 50px;
+  position: relative;
+  padding-top: 8%;
+  text-align: center;
+  opacity: 1;
+  z-index: 3;
+  font-weight: 500;
+  line-height: 50px;
 }
 
 .quiz-btn {
@@ -51,7 +56,7 @@
 .quiz-btn:active {
   background: #144e75;
 }
-.quiz-btn-div{
+.quiz-btn-div {
   padding: 1%;
 }
 .ldr-btn {
@@ -82,24 +87,18 @@
   margin-right: auto;
   width: 35%;
 }
-.ldr-btn-div{
+.ldr-btn-div {
   padding: 1%;
 }
-.main-title { 
-  color: rgb(0, 62, 121); 
+.main-title {
+  color: rgb(0, 62, 121);
   font: bold 52px Helvetica, Arial, Sans-Serif;
-  text-shadow: 1px 1px white, 
-               2px 2px white, 
-               3px 3px white;
+  text-shadow: 1px 1px white, 2px 2px white, 3px 3px white;
 }
 .main-title:hover {
-  position: relative; 
-  top: -3px; 
-  left: -3px; 
-  text-shadow: 1px 1px white, 
-               2px 2px white, 
-               3px 3px white, 
-               4px 4px white, 
-               5px 5px white, 
-               6px 6px white;
+  position: relative;
+  top: -3px;
+  left: -3px;
+  text-shadow: 1px 1px white, 2px 2px white, 3px 3px white, 4px 4px white,
+    5px 5px white, 6px 6px white;
 }
