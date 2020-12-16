@@ -48,7 +48,7 @@ router.post("/", async (req, res) => {
             } else if (!user) {
                 res.status(404).json({ status: "Not OK", err: "User doesn't exist." });
             } else {
-                res.status(200).json({ status: "OK", emailAddress: user.emailAddress, username: user.username, userId: user._id });
+                res.status(200).json({ status: "OK", emailAddress: user.emailAddress, username: user.username, userId: user._id, fave_musical: user.fave_musical, birth_date: user.birth_date });
             }
         });
         return;
@@ -67,6 +67,32 @@ router.post("/updatepassword", async (req, res) => {
             res.status(404).json({ status: "Not OK", err: "User doesn't exist." });
         } else {
             res.status(200).json({ status: "OK", msg: "Updated Password", user});
+        }
+    });
+});
+
+router.post("/updatemusical", (req, res) => {
+    const { fave_musical } = req.body;
+    User.findByIdAndUpdate(req.body.id, {fave_musical}, (err, user) => {
+        if (err) { 
+            res.status(500).json({ status: "Not OK", err });
+        } else if (!user) {
+            res.status(404).json({ status: "Not OK", err: "User doesn't exist." });
+        } else {
+            res.status(200).json({status: "OK", fave_musical: user.fave_musical, user})
+        }
+    });
+});
+
+router.post("/updatedob", (req, res) => {
+    const {  birth_date} = req.body;
+    User.findByIdAndUpdate(req.body.id, { birth_date}, (err, user) => {
+        if (err) { 
+            res.status(500).json({ status: "Not OK", err });
+        } else if (!user) {
+            res.status(404).json({ status: "Not OK", err: "User doesn't exist." });
+        } else {
+            res.status(200).json({status: "OK", birth_date: user.birth_date, user})
         }
     });
 });
