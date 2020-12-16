@@ -91,14 +91,19 @@ body {
   padding: 1%;
 }
 .main-title {
+  text-decoration: underline;
+  font-size: 100px;
   color: rgb(0, 62, 121);
-  font: bold 52px Helvetica, Arial, Sans-Serif;
-  text-shadow: 1px 1px white, 2px 2px white, 3px 3px white;
-}
-.main-title:hover {
-  position: relative;
-  top: -3px;
-  left: -3px;
-  text-shadow: 1px 1px white, 2px 2px white, 3px 3px white, 4px 4px white,
-    5px 5px white, 6px 6px white;
+  text-shadow: 0 1px 0 #ccc,
+             0 2px 0 #c9c9c9,
+             0 3px 0 #bbb,
+             0 4px 0 #b9b9b9,
+             0 5px 0 #aaa,
+             0 6px 1px rgba(0,0,0,.1),
+             0 0 5px rgba(0,0,0,.1),
+             0 1px 3px rgba(0,0,0,.3),
+             0 3px 5px rgba(0,0,0,.2),
+             0 5px 10px rgba(0,0,0,.25),
+             0 10px 10px rgba(0,0,0,.2),
+             0 20px 20px rgba(0,0,0,.15);
 }

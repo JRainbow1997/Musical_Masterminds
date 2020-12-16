@@ -105,6 +105,7 @@ function Profile() {
                     <IdleTimerContainer />
                     <div className="profile-forms">
                         <div className="profile-panel">
+                            <h1 className="profile-title">Profile</h1>
                             <h3>Your username: {sessionStorage.getItem("username")}</h3>
                             <h4>Your email: {sessionStorage.getItem("email")}</h4>
                             <p>Date of Birth: {sessionStorage.getItem("DOB")}</p>
