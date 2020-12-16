@@ -1,0 +1,8 @@
+.delete-form{
+    text-align: center;
+    background-color: rgba(211, 211, 211, 0.9);
+    height: 90vh;
+    width: 80%;
+    margin-left: 10%;
+    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+}

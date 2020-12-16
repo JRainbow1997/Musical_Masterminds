@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import IdleTimerContainer from "../IdleTimerComponent/IdleTimerComponent";
+import { Link } from 'react-router-dom';
 import NotSignedIn from "../notSignedIn/NotSignedIn";
 import "./Profile.css";
 
@@ -115,7 +116,6 @@ function Profile() {
                                 </form>
                             </div> : ""
                         }
-                    
                     <div>
                         <a href="#" onClick={proftoggle}>Update Profile</a>
                         {(profileToggled) ?
@@ -139,6 +139,7 @@ function Profile() {
                             </div> : ""
                         }
                         </div>
+                        <Link to = "/delete">Delete Account</Link>
                     </div>
                 </div>
             }

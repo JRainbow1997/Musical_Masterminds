@@ -13,6 +13,7 @@ import Signin from "./components/signin/Signin";
 import Signup from "./components/signup/Signup";
 import Signout from "./components/signout/Signout";
 import NotSignedIn from "./components/notSignedIn/NotSignedIn";
+import Delete from "./components/delete/Delete";
 import "./App.css";
 import Footer from "./components/footer/Footer";
 
@@ -35,6 +36,7 @@ function App() {
               <Route exact path="/Leaderboard" component={Leaderboard} />
               <Route exact path="/Main" component={Main} />
               <Route exact path="/Profile" component={Profile} />
+              <Route exact path="/Delete" component={Delete} />
               <Route exact path="/Quiz" component={Quiz} />
               <Route exact path="/Questions" component={Quiz} />
               <Route exact path="/Results" component={Results} />
