@@ -27,6 +27,7 @@ const Signup = () => {
                 sessionStorage.setItem('userId', res.data.userId);
                 sessionStorage.setItem("fave_musical", res.data.fave_musical);
                 sessionStorage.setItem("DOB", res.data.birth_date);
+                sessionStorage.setItem("total_points", res.data.total_points);
                 history.push('/main');
             }
         }).catch((err) => {

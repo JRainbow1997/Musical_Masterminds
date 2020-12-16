@@ -48,14 +48,14 @@ router.post("/", async (req, res) => {
             } else if (!user) {
                 res.status(404).json({ status: "Not OK", err: "User doesn't exist." });
             } else {
-                res.status(200).json({ status: "OK", emailAddress: user.emailAddress, username: user.username, userId: user._id, fave_musical: user.fave_musical, birth_date: user.birth_date });
+                res.status(200).json({ status: "OK", emailAddress: user.emailAddress, username: user.username, userId: user._id, fave_musical: user.fave_musical, birth_date: user.birth_date, total_points:user.total_points });
             }
         });
         return;
     }
     res.status(401).json({ status: "Not OK", err: "Unauthorised." });
 });
-
+//This route update a new password
 router.post("/updatepassword", async (req, res) => {
     if (req.body.password !== req.body.passwordCheck) {
         return res.status(400).json({ status: "Not OK", err: "Passwords Don\"t match" })
@@ -70,7 +70,7 @@ router.post("/updatepassword", async (req, res) => {
         }
     });
 });
-
+//This route updates fave_musical by user id
 router.post("/updatemusical", (req, res) => {
     const { fave_musical } = req.body;
     User.findByIdAndUpdate(req.body.id, {fave_musical}, (err, user) => {
@@ -83,9 +83,9 @@ router.post("/updatemusical", (req, res) => {
         }
     });
 });
-
+//This route updates date of birth by user id
 router.post("/updatedob", (req, res) => {
-    const {  birth_date} = req.body;
+    const {  birth_date } = req.body;
     User.findByIdAndUpdate(req.body.id, { birth_date}, (err, user) => {
         if (err) { 
             res.status(500).json({ status: "Not OK", err });
@@ -96,5 +96,17 @@ router.post("/updatedob", (req, res) => {
         }
     });
 });
-
+//This route updates total points by user id
+router.post("/totalpoints", (req, res) => {
+    const { total_points } = req.body;
+    User.findByIdAndUpdate(req.body.id, {total_points}, (err, user) => {
+        if (err) { 
+            res.status(500).json({ status: "Not OK", err });
+        } else if (!user) {
+            res.status(404).json({ status: "Not OK", err: "User doesn't exist." });
+        } else {
+            res.status(200).json({status: "OK", total_points: user.total_points, user})
+        }
+    })
+})
 module.exports = router;

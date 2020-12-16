@@ -3,7 +3,7 @@ const router = express.Router();
 const LeaderBoard = require("../models/schemas/leaderboard");
 const User = require("../models/schemas/users");
 
-
+// This route gets the leaderboard
 router.get("/", (req, res) => {
     LeaderBoard.find({}, (err, result) => {
         if (err) {
@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
         }
     });
 });
-
+//This route posts all results from each users
 router.post("/", (req, res) => {
     User.find({}, async (err, users) => {
         if (err) {
@@ -27,6 +27,4 @@ router.post("/", (req, res) => {
         }
     });
 });
-
-
 module.exports = router;

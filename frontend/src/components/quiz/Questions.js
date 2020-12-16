@@ -31,6 +31,13 @@ const Questions = () => {
         }).catch((err) => {
             alert(err, "Unable to send data to leaderboard")
         })
+        // axios.post("/users/totalpoints", {
+        //     userId: sessionStorage.getItem("userId"),
+        //     total_point: total_point
+        // }).then((res) => {
+        //     if (res.data.status === "Ok")
+
+        // })
     }
 
     const shuffleAnswers = () => {

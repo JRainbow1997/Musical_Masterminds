@@ -7,6 +7,7 @@
     box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
 }
 #question{
+    padding-top: 2%;
     font-size: calc(10px + 2vmin);
     color: black;
 }
@@ -30,7 +31,8 @@
 }
   
 :root {
-	--transform-value: -100%;
+    --transform-value: -100%;
+    --animation-delay: 2.5s;
 	--animation-duration: 2s;
 	--animation-ease: ease-in;
 }
