@@ -2,7 +2,7 @@
   background-image: url("../main/images/mt_background.jpg");
   background-size: cover;
   height: 90vh;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 .faq-wrapper {
@@ -11,8 +11,7 @@
   top: 10%;
   margin-left: 5%;
   margin-right: 5%;
-  padding-top: 2%;
-  padding-bottom: 1%;
+  padding: 2%;
   box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
 }
 
@@ -62,6 +61,7 @@
   padding: 0px 14px;
   margin: 0 40px;
   height: 0;
+  padding-top: 1%;
   overflow: hidden;
   z-index: 1;
   position: relative;
