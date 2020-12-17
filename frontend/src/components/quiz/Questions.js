@@ -95,10 +95,8 @@ const Questions = () => {
             if (choice === correctAnswer) {
                 finalScore += 1;
                 answerHistory.push(`The answer was: ${correctAnswer}. You chose ${choice} ✅`);
-                console.log(answerHistory);
             } else {
                 answerHistory.push(`Q${questionNum}: The answer was: ${correctAnswer}. You chose ${choice} ❌`);
-                console.log(answerHistory);
             }
             shuffleAnswers();
         }
