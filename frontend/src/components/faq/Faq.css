@@ -4,7 +4,9 @@
   height: 90vh;
   opacity: 0.95;
 }
-
+.faq-background p{
+  line-height: 20px;
+}
 .faq-wrapper {
   background-color: rgb(0, 62, 121);
   position: relative;

@@ -1,11 +1,13 @@
 *{
     cursor: url("../src/components/image/cursor.png"), auto;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .AppBody {
     background-image: url("./components/main/images/mt_background.jpg");
     background-size: cover;
     min-height: 90vh;
-    max-height: 100vh;
+    max-height: max-content;
+    height: max-content;
   }
 
 /* iPhone 6/7/8 */

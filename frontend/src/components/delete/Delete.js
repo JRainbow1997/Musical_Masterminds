@@ -4,8 +4,8 @@ import axios from "axios";
 import "./Delete.css";
 
 function Delete() {
+    document.title = "Delete Account | Musical Masterminds";
 
-    const email = sessionStorage.getItem("email");
     const history = useHistory();
     const [password, setPassword] = useState("");
     const [verifyPassword, setVerifyPassword] = useState("");
@@ -16,14 +16,11 @@ function Delete() {
     }
     const sendDataToExpress = (event) => {
         event.preventDefault();
-        console.log(password);
         let loggedInPassword = sessionStorage.getItem('password');
-        console.log(loggedInPassword);
-        if ((password == loggedInPassword) && (password == verifyPassword)){
+        if ((password === loggedInPassword) && (password === verifyPassword)){
             axios.delete('api/users/', {data: {
                 id: sessionStorage.getItem("userId"),
             }}).then((res) => {
-                console.log(res.data);
                 if (res.data.message === "Account deleted") {
                     alert("Account deleted");
                     history.push('/');
@@ -40,7 +37,6 @@ function Delete() {
     return(
         <div ClassName ="delete-wrapper">
             <form onSubmit={sendDataToExpress} className="delete-form">
-                <h2>WOAAAHHHHH THERE PLASTIC HORSE ~ Shrek the Musical</h2>
                 <h4>Are you sure you want to delete your Musical Masterminds account?</h4>
                 <label htmlFor="password">Password: </label>
                 <input type="password" name="password" value={password} id="password" className="deleteUserInput" onChange={handleChange}></input>

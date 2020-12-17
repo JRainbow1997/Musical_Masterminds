@@ -9,7 +9,7 @@ function PageNotFound() {
             <h3>You've gone off track!</h3>
             <h4>Click below to get back where you need to be.</h4>
             <br />
-            <a className="back" id="errorLink" href="/#"><Link to="/main">Bring me home!</Link></a>
+            <a className="back-button" id="errorLink" href="/"><Link to="/main">Bring me home!</Link></a>
         </div>
     );
 };

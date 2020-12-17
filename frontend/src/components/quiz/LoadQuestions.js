@@ -23,10 +23,7 @@ const LoadQuestions = () => {
                 let questions = [];
                 let type = [];
                 let answers = [];
-                console.log(res.data);
                 while (i != amount) {
-                    console.log(i);
-                    console.log(res.data.results[i].question);
                     questions.push(res.data.results[i].question);
                     type.push(res.data.results[i].type);
                     answers.push(res.data.results[i].correct_answer);
@@ -39,7 +36,6 @@ const LoadQuestions = () => {
                     }
                     i += 1;
                 }
-                console.log(questions);
                 sessionStorage.setItem("Questions", JSON.stringify(questions));
                 sessionStorage.setItem("Type", JSON.stringify(type));
                 sessionStorage.setItem("Answers", JSON.stringify(answers));

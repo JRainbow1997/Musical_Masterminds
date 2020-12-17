@@ -22,7 +22,7 @@ const Signout = () => {
             <div className="SO-Content">
                 <h1>You have been signed out</h1>
                 <br/>
-                <h2>You will be returned to Sign-in page in 10 seconds</h2>
+                <h2>You will be returned to the Sign-in page in 10 seconds</h2>
                 <br />
                 <a href="/"> Return to Sign-in now?</a>
             </div>
