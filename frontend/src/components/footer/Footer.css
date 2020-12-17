@@ -133,6 +133,11 @@ body {
     line-height: 1.8;
     text-decoration: none;
     color: inherit;
+    padding-right: 1%;
+  }
+
+  .menu {
+    padding: 5%;
   }
   
   .footer .menu a:hover {

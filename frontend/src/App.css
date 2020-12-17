@@ -20,6 +20,9 @@
       min-height: 140vh;
       width: 170vw;
     }
+    nav {
+      width: 160vw;
+    }
     header {
       width: max-content;
     }
