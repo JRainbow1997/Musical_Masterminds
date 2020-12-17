@@ -28,13 +28,14 @@ router.post("/signup", async (req, res) => {
 });
 //This route deletes the user by id
 router.delete("/", async (req, res) => {
+    console.log("Backend Reached");
     User.findByIdAndDelete(req.body.id, (err, docs) => {
         if (err) {
             res.status(500).json({ status: "Not OK" })
         } else if (!docs) {
             res.status(404).json({ status: "Not OK" })
         } else {
-            res.status(200).json({ status: "OK", docs })
+            res.status(200).json({ status: "OK", message: "Account deleted", docs })
         }
     });
 });
