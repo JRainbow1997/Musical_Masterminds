@@ -47,8 +47,7 @@ const Footer = () => {
 
       <div className="footer-right col-md-4 col-sm-6">
         <p className="menu">
-          <a href="/main"> Home</a> | <a href="/about"> About </a> |
-          <a href="/profile"> Settings </a> | <a target="/" href="https://wearecodenation.com/?fbclid=IwAR3qBNMZQMqff3QGo1Hklz-P1yik95hzR3RZxT82_jRi6-a5jHz-v3wDKPY"> Contact</a>
+          <a href="/main"> Home </a> | <a href="/about"> About </a> | <a href="/profile"> Settings </a> | <a target="/" href="https://wearecodenation.com/?fbclid=IwAR3qBNMZQMqff3QGo1Hklz-P1yik95hzR3RZxT82_jRi6-a5jHz-v3wDKPY"> Contact </a>
         </p>
         <p className="name"> CodeNation &copy; 2020</p>
       </div>

@@ -21,7 +21,7 @@
 .signin-form label{
     text-align: left;
     margin-bottom: -5vh;
-    padding: 0;
+    padding-bottom: 3%;
 }
 .signin-title{
     margin: 0;
@@ -61,4 +61,21 @@
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease-in-out 0.1s;
+  }
+
+  @media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px)  {
+
+    .signin-form {
+        padding: 3%;
+        margin: 0;
+        width: 60%;
+        position: absolute;
+        left: 50%;
+        top: 20%;
+    }
+    .signin-form label {
+        padding-bottom: 7%;
+    }
   }
