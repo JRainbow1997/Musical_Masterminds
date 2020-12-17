@@ -23,6 +23,7 @@ const Signin = () => {
             if (res.data.status === 'OK') {
                 sessionStorage.setItem('signedIn', true);
                 sessionStorage.setItem('email', res.data.emailAddress);
+                sessionStorage.setItem('password', password);
                 sessionStorage.setItem('username', res.data.username);
                 sessionStorage.setItem('userId', res.data.userId);
                 sessionStorage.setItem("fave_musical", res.data.fave_musical);

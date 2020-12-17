@@ -16,23 +16,26 @@ function Delete() {
     }
     const sendDataToExpress = (event) => {
         event.preventDefault();
-        axios.delete('api/users/', {data: {
-            email: email,
-            password: password,
-            verifyPassword: verifyPassword
-        }}).then((res) => {
-            console.log(res.data);
-            if (res.data.status === "Account deleted") {
-                alert("Account deleted");
-                history.push('/');
-            } else {
-                alert(res.data.message);
-                setPassword("");
-                setVerifyPassword("");
-            }
-        }).catch((err) => {
-            alert("Account not deleted.")
-        })
+        console.log(password);
+        let loggedInPassword = sessionStorage.getItem('password');
+        console.log(loggedInPassword);
+        if ((password == loggedInPassword) && (password == verifyPassword)){
+            axios.delete('api/users/', {data: {
+                id: sessionStorage.getItem("userId"),
+            }}).then((res) => {
+                console.log(res.data);
+                if (res.data.message === "Account deleted") {
+                    alert("Account deleted");
+                    history.push('/');
+                } else {
+                    alert(res.data.message);
+                    setPassword("");
+                    setVerifyPassword("");
+                }
+            }).catch((err) => {
+                alert("Account not deleted.")
+            })
+        }else{alert("Password is incorrect")}
     }
     return(
         <div ClassName ="delete-wrapper">
