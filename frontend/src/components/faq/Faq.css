@@ -114,3 +114,19 @@ li {
 .panel {
   display: none;
 }
+
+@media only screen 
+and (min-device-width: 375px) 
+and (max-device-width: 667px)  {
+  .faq-wrapper {
+    position: absolute;
+    width: 120%;
+    top: 20%;
+    left: 13%;
+    height: max-content;
+  }
+
+  .faq-background {
+    height: 100%;
+  }
+}

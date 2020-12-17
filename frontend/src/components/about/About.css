@@ -68,3 +68,16 @@ body {
     height: fit-content;
   }
  
+  @media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px)  {
+    .split {
+      height: 140vh;
+    }
+    .content, .content1 {
+      height: 140vh;
+    }
+    .content-text {
+      padding: 10%;
+    }
+  }

@@ -67,3 +67,15 @@ tr:nth-child(even):hover {
     background-color: rgb(0, 0, 0)
 }
 
+@media only screen 
+    and (min-device-width: 375px) 
+    and (max-device-width: 667px)  { 
+        .LB-Content {
+            margin: 0;
+            position: absolute;
+            width: 100%;
+            top: 15%;
+            left: 29%;
+            height: max-content;
+        }
+    }
