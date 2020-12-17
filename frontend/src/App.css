@@ -5,5 +5,25 @@
     background-image: url("./components/main/images/mt_background.jpg");
     background-size: cover;
     min-height: 90vh;
+    max-height: 100vh;
   }
 
+/* iPhone 6/7/8 */
+
+@media only screen 
+    and (min-device-width: 375px) 
+    and (max-device-width: 667px)  {
+      .AppBody {
+      display: block;
+      margin: 0;
+      padding: 0;
+      min-height: 140vh;
+      width: 170vw;
+    }
+    header {
+      width: max-content;
+    }
+    footer {
+      min-width: 170vw;
+    }
+}
