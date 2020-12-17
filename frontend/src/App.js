@@ -8,7 +8,6 @@ import Main from "./components/main/Main";
 import Navbar from "./components/navbar/navbar";
 import Profile from "./components/profile/Profile";
 import Quiz from "./components/quiz/Quiz";
-import Results from "./components/quiz/Results";
 import Signin from "./components/signin/Signin";
 import Signup from "./components/signup/Signup";
 import Signout from "./components/signout/Signout";
@@ -39,7 +38,6 @@ function App() {
               <Route exact path="/Delete" component={Delete} />
               <Route exact path="/Quiz" component={Quiz} />
               <Route exact path="/Questions" component={Quiz} />
-              <Route exact path="/Results" component={Results} />
               <Route exact path="/" component={Signin} />
               <Route exact path="/Signup" component={Signup} />
               <Route path="/signout" component={Signout} />
