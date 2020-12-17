@@ -54,7 +54,7 @@
     background: 0;
     margin: 10px 0;
     border: 1.5px solid;
-    font: 25px 'open sans', sans-serif;
+    font-size: 25px;
     cursor: pointer;
     padding: 8px 25px;
     border-radius: 0.5vh;

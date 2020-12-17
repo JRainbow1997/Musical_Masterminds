@@ -1,17 +1,54 @@
 .error-wrapper{
+    margin-top: 3%;
+    padding-top: 5%;
+    color: black;
     text-align: center;
-    justify-content: center;
-    background-color: rgb(0, 62, 121);
-    color: #7CAFFA;
-    margin: 20%;
-    padding: 1%;
-    border-radius: 1em;
+    background-color: rgba(211, 211, 211, 0.9);
+    width: 50%;
+    position: absolute;
+    left: 25%;
+    height: max-content;
+    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
 }
-.back{
-    border-radius: 1em;
-    background-color: rgb(255, 255, 255);
-    padding: 1%;
-    color: #7CAFFA;
+.back-button{ 
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    opacity: 1;
+    z-index: 2;
+    line-height: 30px;
+    padding: 17px;
+    border-radius: 17px;
+    font-family: Georgia, serif;
+    font-weight: normal;
+    text-decoration: none;
+    text-align: center;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    background-image: linear-gradient(
+        to right,
+        rgb(28, 110, 164) 0%,
+        rgb(35, 136, 203) 50%,
+        rgb(20, 78, 117) 100%
+    );
+    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+    border: 2px solid rgb(28, 110, 164);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 25%;
+    height: fit-content;
+}
+.back-button:hover {
+    background: #1c6ea4;
+}
+.back-button:active {
+    background: #144e75;
+}
+.back-button a{
+    color: white;
 }
 a:link, a:visited{
     text-decoration: none;

@@ -16,7 +16,7 @@ const IdleTimerContainer = () => {
   const onIdle = () => {
     console.log("User is idle");
     setModalIsOpen(true);
-    sessionTimeOutRef.current = setTimeout(logOut, 30000); // 30 seconds
+    sessionTimeOutRef.current = setTimeout(logOut, 30000);
   };
 
   const stayActive = () => {
@@ -36,16 +36,16 @@ const IdleTimerContainer = () => {
   return (
     <div>
       <Modal overlayClassName="overlay" isOpen={modalIsOpen}>
-        <h2>You've been idle for a while!</h2>
-        <p>You will be logged out soon</p>
+        <h2>You have been idle for a while!</h2>
+        <p>You will be signed out in 30 seconds.</p>
         <div>
-          <button onClick={logOut}>Sign me out</button>
-          <button onClick={stayActive}>Keep me signed in</button>
+          <button onClick={logOut}>Sign me out.</button>
+          <button onClick={stayActive}>Keep me signed in.</button>
         </div>
       </Modal>
       <IdleTimer
         ref={idleTimerRef}
-        timeout={1800000} //30 minutes
+        timeout={1800000}
         onIdle={onIdle}
       ></IdleTimer>
     </div>

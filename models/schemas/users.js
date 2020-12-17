@@ -38,14 +38,14 @@ userSchema.statics.checkExists = async function(email) {
 userSchema.statics.checkPassword = async function(email, password) {
     const user = await this.findOne({emailAddress: email})
     if (!user) {
-        console.log("user doesnt exist")
+        console.log("User doesnt exist")
         return false;    
     }
     
     if (await bcrypt.compare(password, user.password)) {        
         return true;
     }
-        console.log("passwords don't match")
+        console.log("Passwords don't match")
         return false;
 }
 

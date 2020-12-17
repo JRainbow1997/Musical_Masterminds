@@ -1,83 +1,78 @@
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
+.split {
+  position: relative;
+  height: 90vh;
+  display: flex;  
+}
+
+.screen, .screen1 {
+  position: relative;
+  display: flex;
+  flex-grow: 2;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: 4s; 
+  visibility: visible;
+}
+
+.screen:hover, .screen1:hover {
+  flex-grow: 4;
+}
+
+.screen:nth-child(1) {
+  background: white;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 50px;
+  background-image: url("../main/images/mt_background.jpg");
+  background-size: cover;
+  height: 100vh;
+  transition: 0.5s;
+  opacity: 1;
+  visibility: visible;
+  font-size: large;
+}
+.content1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 50px;
+  color: white;
+  background: rgb(0, 62, 121);
+  transition: 0.5s;
+  opacity: 1;
+  font-size: large;
+  z-index: 2;
+}
+.content-text {
+  font-weight: 500;
+  line-height: 40px;
+  background-color: lightgray;
+  opacity: 0.9;
+  box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+  padding: 2%;
+  width: 100%;
+  height: fit-content;
+}
+
+@media only screen 
+and (min-device-width: 375px) 
+and (max-device-width: 667px)  {
   .split {
-    position: relative;
-    height: 90vh;
-    display: flex;  
+    height: 140vh;
   }
-  
-  .screen, .screen1 {
-    position: relative;
-    display: flex;
-    flex-grow: 2;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    transition: 4s; 
-    visibility: visible;
-  }
-  
-  .screen:hover, .screen1:hover {
-    flex-grow: 4;
-  }
-  
-  .screen:nth-child(1) {
-    background: white;
-  }
- 
-  .content {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 50px;
-    background-image: url("../main/images/mt_background.jpg");
-    background-size: cover;
-    height: 100vh;
-    transition: 0.5s;
-    opacity: 1;
-    visibility: visible;
-    font-size: large;
-  }
-  .content1 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 50px;
-    color: white;
-    background: rgb(0, 62, 121);
-    transition: 0.5s;
-    opacity: 1;
-    font-size: large;
+  .content, .content1 {
+    height: 140vh;
   }
   .content-text {
-    font-weight: 500;
-    line-height: 40px;
-    background-color: lightgray;
-    opacity: 0.9;
-    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
-    padding: 2%;
-    width: 100%;
-    height: fit-content;
+    padding: 10%;
   }
- 
-  @media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px)  {
-    .split {
-      height: 140vh;
-    }
-    .content, .content1 {
-      height: 140vh;
-    }
-    .content-text {
-      padding: 10%;
-    }
-  }
+}

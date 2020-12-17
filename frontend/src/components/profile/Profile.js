@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useState } from "react";
 import IdleTimerContainer from "../IdleTimerComponent/IdleTimerComponent";
 import { Link } from 'react-router-dom';
-import NotSignedIn from "../notSignedIn/NotSignedIn";
 import "./Profile.css";
 
 function Profile() {
@@ -39,7 +38,7 @@ function Profile() {
     const toggle = () => {
         setPasswordToggled(!passwordToggled)
     }
-   
+
 
     const [fave_musical, setFave_Musical] = useState(sessionStorage.getItem("fave_musical"));
     const [dob, setDob] = useState(sessionStorage.getItem("DOB"));
@@ -99,8 +98,8 @@ function Profile() {
                             <h1 className="profile-title">Profile</h1>
                             <h3>Your username: {sessionStorage.getItem("username")}</h3>
                             <h4>Your email: {sessionStorage.getItem("email")}</h4>
-                            <p>Date of Birth: {(dob == "undefined") ? "No Date of Birth entered": dob.split("T")[0].replace()}</p>
-                            <p>Favourite Musical: {(fave_musical == "undefined") ? "No musical entered": fave_musical} </p>
+                            <p>Date of Birth: {(dob == "undefined") ? "No Date of Birth entered" : dob.split("T")[0].replace()}</p>
+                            <p>Favourite Musical: {(fave_musical == "undefined") ? "No musical entered" : fave_musical} </p>
                             <p>Total Points: {sessionStorage.getItem("total_points")}</p>
                         </div>
                         <a href="#" onClick={toggle}>Reset password</a>
@@ -116,30 +115,30 @@ function Profile() {
                                 </form>
                             </div> : ""
                         }
-                    <div>
-                        <a href="#" onClick={proftoggle}>Update Profile</a>
-                        {(profileToggled) ?
-                            <div id="show_hide">
-                                <div className="musical-form">
-                                    <form onSubmit={musicalSubmit} className="reset">
-                                        <label htmlFor="fav_musical">Enter Your favourite musical</label>
-                                        <input id="fave_musical" type="text" placeholder="Enter Your favourite musical" onChange={musicalHandler} value={fave_musical}></input>
-                                        <input type="submit" value="submit"></input>
-                                    </form>
+                        <div className="updates">
+                            <a href="#" onClick={proftoggle}>Update Profile</a>
+                            {(profileToggled) ?
+                                <div id="show_hide">
+                                    <div className="musical-form">
+                                        <form onSubmit={musicalSubmit} className="reset">
+                                            <label htmlFor="fav_musical">Enter Your favourite musical</label>
+                                            <input id="fave_musical" type="text" placeholder="Enter Your favourite musical" onChange={musicalHandler} value={fave_musical}></input>
+                                            <input type="submit" value="submit"></input>
+                                        </form>
 
-                                </div>
-                                <div className="dob-form">
-                                    <br></br>
-                                    <form onSubmit={dobSubmit} className="reset">
-                                        <label htmlFor="DOB">Enter Your Date of Birth</label>
-                                        <input type="date" placeholder="Enter Your Date of Birth" onChange={dobHandler} value={dob}></input>
-                                        <input type="submit" value="submit"></input>
-                                    </form>
-                                </div>
-                            </div> : ""
-                        }
+                                    </div>
+                                    <div className="dob-form">
+                                        <br></br>
+                                        <form onSubmit={dobSubmit} className="reset">
+                                            <label htmlFor="DOB">Enter Your Date of Birth</label>
+                                            <input type="date" placeholder="Enter Your Date of Birth" onChange={dobHandler} value={dob}></input>
+                                            <input type="submit" value="submit"></input>
+                                        </form>
+                                    </div>
+                                </div> : ""
+                            }
                         </div>
-                        <Link to = "/delete">Delete Account</Link>
+                        <Link to="/delete">Delete Account</Link>
                     </div>
                 </div>
             }
