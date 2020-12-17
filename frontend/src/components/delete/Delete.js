@@ -40,9 +40,8 @@ function Delete() {
     return(
         <div ClassName ="delete-wrapper">
             <form onSubmit={sendDataToExpress} className="delete-form">
-                <h2>WOAAAHHHHH THERE PLASTIC HORSE ~ Shrek the Musical<br/> Are you sure you want to delete your Musical Masterminds account?</h2>
-                <label htmlFor="email" name="email" id="email" value={email}>{email}</label>
-                <br />
+                <h2>WOAAAHHHHH THERE PLASTIC HORSE ~ Shrek the Musical</h2>
+                <h4>Are you sure you want to delete your Musical Masterminds account?</h4>
                 <label htmlFor="password">Password: </label>
                 <input type="password" name="password" value={password} id="password" className="deleteUserInput" onChange={handleChange}></input>
                 <label htmlFor="verifyPassword">Verify Password: </label>
