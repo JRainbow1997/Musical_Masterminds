@@ -99,8 +99,8 @@ function Profile() {
                             <h1 className="profile-title">Profile</h1>
                             <h3>Your username: {sessionStorage.getItem("username")}</h3>
                             <h4>Your email: {sessionStorage.getItem("email")}</h4>
-                            <p>Date of Birth: {dob.split("T")[0].replace()}</p>
-                            <p>Favourite Musical: {fave_musical}</p>
+                            <p>Date of Birth: {(dob == "undefined") ? "No Date of Birth entered": dob.split("T")[0].replace()}</p>
+                            <p>Favourite Musical: {(fave_musical == "undefined") ? "No musical entered": fave_musical} </p>
                             <p>Total Points: {sessionStorage.getItem("total_points")}</p>
                         </div>
                         <a href="#" onClick={toggle}>Reset password</a>
