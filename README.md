@@ -3,7 +3,7 @@ Musical Masterminds is a student built project app which allows a user to Sign i
 
 The user can select the difficulty of the questions, ranging from Easy / Medium / Hard, to suit their preferences and test their knowledge. The user can also input how many questions they would like to answer.
 
-This project was built by Josh, Maddy, and Joe. Students who are partaking in the CodeNation Master: Coding course, an intense online bootcamp, designed for an in-depth look at full-stackdevelopment. For more information on CodeNation, please visit https://wearecodenation.com/
+This project was built by Josh, Maddy, and Joe. Students who are partaking in the CodeNation Master: Coding course, an intense online bootcamp, designed for an in-depth look at full-stack development. For more information on CodeNation, please visit https://wearecodenation.com/
 
 To build this App we used the MERN stack. MERN stack is the combination of MongoDB, Express, React, and Node.js. 
 We also used Axios to connect the front + backend together through express.
