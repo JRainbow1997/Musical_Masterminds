@@ -23,9 +23,9 @@ const Signup = () => {
         }).then((res) => {
             if (res.data.status === 'OK') {
                 sessionStorage.setItem('signedIn', true);
-                sessionStorage.setItem('email', res.data.emailAddress);
+                sessionStorage.setItem('email', email);
                 sessionStorage.setItem('password', password);
-                sessionStorage.setItem('username', res.data.username);
+                sessionStorage.setItem('username', username);
                 sessionStorage.setItem('userId', res.data.userId);
                 sessionStorage.setItem("fave_musical", res.data.fave_musical);
                 sessionStorage.setItem("DOB", res.data.birth_date);

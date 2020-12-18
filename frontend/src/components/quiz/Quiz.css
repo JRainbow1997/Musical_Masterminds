@@ -5,7 +5,7 @@
 }
 .quizForm{
   margin: 10px auto;
-  width: 18%;
+  width: 22.5%;
   height: 400px;
   display: flex;
   justify-content: space-between;
@@ -35,10 +35,8 @@
   padding: 17px;
   border-radius: 17px;
   font-family: Georgia, serif;
-  font-weight: normal;
   text-align: center;
   text-decoration: none;
-  text-transform: none;
   background-image: linear-gradient(
     to right,
     rgb(28, 110, 164) 0%,

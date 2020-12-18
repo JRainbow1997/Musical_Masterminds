@@ -7,45 +7,100 @@
     box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
 }
 #question{
-    padding-top: 2%;
+    padding-top: 10%;
     font-size: calc(10px + 2vmin);
-    color: black;
+    color: rgb(31, 31, 31);
+    font-weight: bold;
 }
 .answer{
-    margin: 1%;
-    width: 20%;
-    height: 100px;
-    border-radius: 10px;
-    border-width: 10px;
+    margin: 2%;
+    width: 30%;
+    height: 40%;
     border-color: rgb(0, 62, 121);
-    background-color: #7CAFFA;
+    color: rgb(255, 255, 255);
+    font-size: calc(5px + 3vmin);
+    opacity: 1;
+    z-index: 2;
+    line-height: 30px;
+    padding: 17px;
+    border-radius: 17px;
+    font-family: Georgia, serif;
+    text-align: center;
+    text-decoration: none;
+    background-image: linear-gradient(
+        to right,
+        rgb(28, 110, 164) 0%,
+        rgb(35, 136, 203) 50%,
+        rgb(20, 78, 117) 100%
+    );
+    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+    border: 2px solid rgb(28, 110, 164);
 }
 .answer:focus{
-    background-color: green;
+    background-image: linear-gradient(
+        to right,
+        rgb(55, 164, 28) 0%,
+        rgb(35, 203, 35) 50%,
+        rgb(20, 117, 20) 100%
+      );
+    border: 2px solid rgb(28, 164, 39);
 }
 .lock-in{
-    margin: 1%;
-    width: 30%;
-    height: 50px;
-    border-radius: 10px;
-    border-width: 1px;
+    margin: 2%;
+    width: 20%;
+    height: 40%;
     border-color: rgb(0, 62, 121);
-    background-color: #7CAFFA;
+    color: rgb(255, 255, 255);
+    font-size: calc(5px + 3vmin);
+    opacity: 1;
+    z-index: 2;
+    line-height: 30px;
+    padding: 17px;
+    border-radius: 17px;
+    font-family: Georgia, serif;
+    text-align: center;
+    text-decoration: none;
+    background-image: linear-gradient(
+        to right,
+        rgb(28, 110, 164) 0%,
+        rgb(35, 136, 203) 50%,
+        rgb(20, 78, 117) 100%
+    );
+    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+    border: 2px solid rgb(28, 110, 164);
 }
-.start{
+.start,.center-stage{
     margin: 0;
     position: absolute;
-    top: 50%;
     z-index: 100;
 }
+.start{
+    top: 50%;
+    left: -16.5%;
+    font-size: calc(10px + 2vmin);
+    background: none;
+    border-radius: 1em;
+    border: 5px solid #6d0019;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #a30429;
+}
+.center-stage{
+    color: black;
+    top: 40%;
+    left: -40%;
+    font-size: calc(10px + 4vmin);
+}
 .results{
+    position: relative;
     visibility: hidden;
+    font-size: calc(5px + 3vmin);
+    top: -50%;
 }
 :root {
     --transform-value: -100%;
-    --animation-delay: 2.5s;
-	  --animation-duration: 2s;
-	  --animation-ease: ease-in;
+    --animation-delay: 12.5s;
+	--animation-duration: 2s;
+	--animation-ease: ease-in;
 }
 @keyframes initialAnimation-horizontal {
     from {

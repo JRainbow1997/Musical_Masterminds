@@ -28,6 +28,14 @@ const Questions = () => {
                 document.getElementById("3and4").style.visibility = "hidden"
                 document.getElementById("displayScore").innerHTML = `You got ${finalScore}/${questionNum} correct!`;
                 document.getElementById("results").style.visibility = "visible"
+                let calculatePercentage = finalScore/questionNum * 100;
+                if (calculatePercentage < 50){
+                    document.getElementById("percentage").innerHTML = "Terrible! I would try again!"
+                }else if ((calculatePercentage >= 50) && (calculatePercentage <= 75)){
+                    document.getElementById("percentage").innerHTML = "A good effort! But you can do better!"
+                }else if (calculatePercentage >75){
+                    document.getElementById("percentage").innerHTML = "Amazing work well done!"
+                }
             }
         }).catch((err) => {
             alert(err, "Unable to send data to leaderboard")
@@ -36,6 +44,7 @@ const Questions = () => {
 
     const curtains = () => {
         document.getElementById("start").style.visibility = "hidden"
+        document.getElementById("center-stage").style.visibility = "hidden"
     }
 
     const shuffleAnswers = (event) => {
@@ -113,16 +122,17 @@ const Questions = () => {
                             <button type="button" className="answer" id="answer3" ref={textInput} onClick={chooseAnswer}>3</button>
                             <button type="button" className="answer" id="answer4" ref={textInput} onClick={chooseAnswer}>4</button>
                         </div>
-                        <button type="submit" id="lock-in" className="lock-in" onClick={submit}>Lock in!</button>
+                        <button type="button" id="lock-in" className="lock-in" onClick={submit}>Lock in!</button>
                     </div>
                     <div id="results" className="results">
                         <p id="displayScore"></p>
+                        <p id="percentage"></p>
                         <Link to="/quiz">Try Again!</Link>
                     </div>
                     <div />
                 </div>
             <div>
-                <p>Are you ready to take center stage?</p>
+                <p className="center-stage" id="center-stage">Are you ready to take center stage?</p>
                 <button className="start" id="start" onClick={shuffleAnswers}>I WAS BORN READY</button>
             </div>
         </div>
