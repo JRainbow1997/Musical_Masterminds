@@ -22,7 +22,7 @@ function Delete() {
                 id: sessionStorage.getItem("userId"),
             }}).then((res) => {
                 if (res.data.message === "Account deleted") {
-                    alert("Account deleted");
+                    alert("Account deleted, you will be redirected to the sign in page when you press OK");
                     history.push('/');
                 } else {
                     alert(res.data.message);
@@ -32,7 +32,7 @@ function Delete() {
             }).catch((err) => {
                 alert("Account not deleted.")
             })
-        }else{alert("Password is incorrect")}
+        }else{alert("Password is incorrect or they do not match")}
     }
     return(
         <div ClassName ="delete-wrapper">
