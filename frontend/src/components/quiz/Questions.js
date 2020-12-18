@@ -1,6 +1,6 @@
 import React from "react";
-import Results from "./Results";
 import axios from "axios";
+import { Link, BrowserRouter } from "react-router-dom";
 import IdleTimerContainer from "../IdleTimerComponent/IdleTimerComponent";
 import "./Questions.css";
 
@@ -16,8 +16,6 @@ const Questions = () => {
     let finalScore = 0;
     let choice = '';
     let correctAnswer = '';
-    let gameOver = false;
-    let answerHistory = [];
 
     const calculateFinalScore = () => {
         axios.post('api/quiz', {
@@ -26,8 +24,10 @@ const Questions = () => {
             difficulty: sessionStorage.getItem("Difficulty")
         }).then((res) => {
             if (res.data.status === 'OK') {
-                alert('quizend');
-                gameOver = true;
+                document.getElementById("answer-display").style.visibility = "hidden"
+                document.getElementById("3and4").style.visibility = "hidden"
+                document.getElementById("displayScore").innerHTML = `You got ${finalScore}/${questionNum} correct!`;
+                document.getElementById("results").style.visibility = "visible"
             }
         }).catch((err) => {
             alert(err, "Unable to send data to leaderboard")
@@ -40,7 +40,7 @@ const Questions = () => {
 
     const shuffleAnswers = (event) => {
         event.preventDefault();
-        if (event.target.id="start"){
+        if (event.target.id === "start"){
             curtains();
         }
         if (questionAnswers < answers.length) {
@@ -50,8 +50,7 @@ const Questions = () => {
             questionNum += 1;
             correctAnswer = answers[questionAnswers]
             if (type[questionNum - 1] === "multiple") {
-                document.getElementById("answer3").style.visibility = "visible"
-                document.getElementById("answer4").style.visibility = "visible"
+                document.getElementById("3and4").style.visibility = "visible"
                 questionAnswers += 4;
                 for (let x = questionAnswers - 4; x < questionAnswers; x++) {
                     specificAnswers.push(answers[x]);
@@ -76,10 +75,10 @@ const Questions = () => {
                 for (let i = 0; i < 2; i++){
                     document.getElementById(`answer${i+1}`).innerHTML = specificAnswers[i];
                 }
-                document.getElementById("answer3").style.visibility = "hidden"
-                document.getElementById("answer4").style.visibility = "hidden"
+                document.getElementById("3and4").style.visibility = "hidden"
             }
         } else {
+            console.log("end");
             calculateFinalScore();    
         }
     };
@@ -88,42 +87,44 @@ const Questions = () => {
         choice = event.target.innerHTML;
     }
     
-    const submit = () => {
+    const submit = (event) => {
         if (choice === '') {
             alert("You must select an answer first!")
         } else {
             if (choice === correctAnswer) {
                 finalScore += 1;
-                answerHistory.push(`The answer was: ${correctAnswer}. You chose ${choice} ✅`);
-            } else {
-                answerHistory.push(`Q${questionNum}: The answer was: ${correctAnswer}. You chose ${choice} ❌`);
             }
-            shuffleAnswers();
+            shuffleAnswers(event);
         }
     }
 
     return (
         <div data-animation="curtain">
             <div></div>
-            <IdleTimerContainer />
-                {(!gameOver) ? <div className="questions-wrapper">
-                    <p id="question">{questions[questionNum - 1]}</p>
-                    <div>
-                        <button type="button" className="answer" id="answer1" ref={textInput} onClick={chooseAnswer}>1</button>
-                        <button type="button" className="answer" id="answer2" ref={textInput} onClick={chooseAnswer}>2</button>
+                <div className="questions-wrapper" id="questions-wrapper">
+                <IdleTimerContainer />
+                    <div id="answer-display">
+                        <p id="question">{questions[questionNum - 1]}</p>
+                        <div id="1and2">
+                            <button type="button" className="answer" id="answer1" ref={textInput} onClick={chooseAnswer}>1</button>
+                            <button type="button" className="answer" id="answer2" ref={textInput} onClick={chooseAnswer}>2</button>
+                        </div>
+                        <div id="3and4">
+                            <button type="button" className="answer" id="answer3" ref={textInput} onClick={chooseAnswer}>3</button>
+                            <button type="button" className="answer" id="answer4" ref={textInput} onClick={chooseAnswer}>4</button>
+                        </div>
+                        <button type="submit" id="lock-in" className="lock-in" onClick={submit}>Lock in!</button>
                     </div>
-                    <div>
-                        <button type="button" className="answer" id="answer3" ref={textInput} onClick={chooseAnswer}>3</button>
-                        <button type="button" className="answer" id="answer4" ref={textInput} onClick={chooseAnswer}>4</button>
+                    <div id="results" className="results">
+                        <p id="displayScore"></p>
+                        <Link to="/quiz">Try Again!</Link>
                     </div>
-                    <button type="submit" id="lock-in" className="lock-in" onClick={submit}>Lock in!</button>
+                    <div />
                 </div>
-                :
-                <div id="final" className="final">
-                    <p id="displayScore">You got {finalScore}/{questionNum} correct!</p>
-                    <Results />
-                </div>}
-            <div><button className="start" id="start" onClick={shuffleAnswers}>Start</button></div>
+            <div>
+                <p>Are you ready to take center stage?</p>
+                <button className="start" id="start" onClick={shuffleAnswers}>I WAS BORN READY</button>
+            </div>
         </div>
     )
 }

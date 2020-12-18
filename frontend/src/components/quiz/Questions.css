@@ -38,6 +38,9 @@
     top: 50%;
     z-index: 100;
 }
+.results{
+    visibility: hidden;
+}
 :root {
     --transform-value: -100%;
     --animation-delay: 2.5s;
@@ -52,7 +55,7 @@
         transform: translateX(var(--transform-value));
     }
 }
-[data-animation*='curtain'] div:first-child, [data-animation*='curtain'] div:last-child {
+[data-animation*='curtain'] div:nth-child(1), [data-animation*='curtain'] div:nth-last-child(1) {
     position: absolute;
     width: 50vw;
 	height: 100vh;
@@ -65,12 +68,12 @@
     #6d0019 80%,#a90329 84%,#a90329 90%,#6d0019 94%,#a90329 98%);
 	z-index: 10;
 }
-[data-animation*='curtain'] div:first-child{
+[data-animation='curtain'] div:nth-child(1){
     left: 0;
     animation: var(--animation-duration) var(--animation-ease) var(--animation-delay) 1 forwards initialAnimation-horizontal;
     z-index: 8;
 }
-[data-animation*='curtain'] div:last-child {
+[data-animation*='curtain'] div:nth-last-child(1) {
     right: 0;
     --transform-value: 100%;
     animation: var(--animation-duration) var(--animation-ease) var(--animation-delay) 1 forwards initialAnimation-horizontal;
